@@ -1,4 +1,4 @@
-var timeStyle = 12;
+var timeStyle = 24;
 
 function changeTimeStyle(time) {
 	
@@ -8,20 +8,34 @@ function changeTimeStyle(time) {
 	
 	if(timeStyle == 12) {
 		
+		if(time == "12:00 pm") {
+			return "12:00";
+		}
+		
+		if(time == "12:30 pm") {
+			return "12:30";
+		}
+		
 		if(time.charAt(1) == ':') {
 			hour = time.substr(0,1);
 			minutes = time.substr(2,2);
 			afternoon = time.substr(5,2) == "pm" ? true : false;
 		} else {
 			hour = time.substr(0,2);
-			mintues = time.substr(3,2);
+			minutes = time.substr(3,2);
 			afternoon = time.substr(6,2) == "pm" ? true : false;
 		}
 		
-		if(afternoon) {
+		if(afternoon && hour != 12) {
 			hour = parseInt(hour) + 12 + "";
 		} else {
-			hour = "0" + hour;
+			if(hour < 10) {
+				hour = "0" + hour;
+			}
+			
+			if(hour == 12) {
+				hour = "00";
+			}
 		}
 		
 		return (hour + ":" + minutes);
@@ -36,7 +50,15 @@ function changeTimeStyle(time) {
 			hour = hour.substr(1,1);
 		}
 		
-		return ((afternoon ? parseInt(hour) - 12 + "" : hour) + ":" + minutes + (afternoon ? " pm" : " am"));
+		if(hour == "0") {
+			hour = "12";
+		}
+		
+		if(afternoon && hour != 12) {
+			hour = parseInt(hour) - 12 + "";
+		}
+		
+		return hour + ":" + minutes + (afternoon ? " pm" : " am");
 	
 	}
 }
