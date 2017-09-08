@@ -13,35 +13,36 @@ body {
 
 .wrapper {
   display:grid;
-  grid-template-columns:1fr 500px 1fr;
+  grid-template-columns:300px 40px 1fr 40px 300px;
   grid-template-rows:auto;
   grid-template-areas:
-    ". date_view date_header"
-    ". btn_grouping .";
+    ". btn_left date_view btn_right date_header";
   height:100%;
   min-height:100%;
   width:100%;
-  min-width:100%;
+  min-width:950px;
   position:absolute;
   top:0px;
   margin:0;
   padding:0;
+  z-index:0;
 }
 
 .date_header {
   display:block;
-  position:fixed;
   top:0px;
   right:0px;
   height:200px;
   background-color:rgba(255,255,255,0.5);
+  grid-area:date_header;
+}
+
+.dayname, .date_text {
   color:#333;
   text-align:right;
   font-size:24px;
   padding:0.6em 0.6em 0 0;
-  grid-area:date_header;
 }
-
 .date_view {
   display:block;
   height:100%;
@@ -79,19 +80,17 @@ body {
   padding-top:15px;
 }
 
-.btn_grouping {
-  display:block;
-  position:absolute;
-  color:#666;
-  width:540px;
-  grid-area:btn_grouping;
-  z-index:1;
+.btn_left {
+  text-align:center;
+  grid-area:btn_left;
 }
 
-.btn_grouping > .fa-arrow-circle-o-left {
-  float:left;
+.btn_right {
+  text-align:center;
+  grid-area:btn_right;
 }
 
-.btn_grouping > .fa-arrow-circle-o-right {
-  float:right;
+.fa:hover {
+  color:lightblue;
+  transition:0.4s;
 }
