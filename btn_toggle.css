@@ -12,12 +12,14 @@ Notes :
 */
 
 .btn_wrapper {
-  display:block;
+  display:inline-block;
+  vertical-align: text-bottom;
   background-color:#ffffff;
   border:1px solid #ccc;
   border-radius:15px;
-  height:30px;
-  width:60px;
+  height:20px;
+  width:40px;
+  transition:0.2s;
 }
 
 .btn_wrapper:hover {
@@ -30,10 +32,11 @@ Notes :
   border:1px solid #ddd;
   border-radius:100%;
   box-shadow:0px 0px 3px 0px #666;
-  height:24px;
-  width:24px;
-  margin:2px 3px 0px 3px;
+  height:14px;
+  width:14px;
+  margin:2px 2px 0px 2px;
   float:left;
+  transition:0.2s;
   z-index:1;
 }
 
@@ -44,8 +47,9 @@ Notes :
 .btn_inner > div {
   display:block;
   color:#333;
+  font-size:12px;
   text-align:center;
-  margin-top:3px;
+  margin-top:1px;
   opacity:0;
   transition:0.4s;
 }

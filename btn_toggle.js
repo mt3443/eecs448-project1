@@ -10,49 +10,73 @@ var button_inner;
 var button_array = []; // This is where our switches are stored
                        // Object is instantiated after first btn_toggle call
 // @PRE Button Element Must Have Unique Index
-// @PRE Button Element Must Use 'onclick="javascript:btn_toggle(uniqueIndex, btn_wrapperID, btn_innerID);"'
+// @PRE Button Element Must Use 'onclick="javascript:btn_toggle(uniqueIndex, btn_wrapperID, btn_innerID, behavior());"'
+// @PRE behavior() Must Be A Toggle Function
 // In HTML Within The 'btn_wrapper' Div
-function btn_toggle(number, name, inner_name) {
-  if(button_array.length === 0) {
+function btn_toggle(number, name, inner_name, /*behavior*/) {
+  if(!inButtonArray(number)) {
     // Create a new object to keep track of our individual toggles
-    // This causes first toggle to lag                            --- ! ISSUE
-    button_array[number] = {
+    var button = {
       element: document.getElementById(name),
       inner: document.getElementById(inner_name),
+      //callback: behavior,
       toggle: true
     };
-  } else {
+    button_array.push(button);
+    animateSwitch(number);
+  }else {
     for(var i = 0; i < button_array.length; i++) {
       // If the object is in button_array[] > Toggle
       if(i === number) {
-        // The toggle switch has been targeted and will now check state
-        if(button_array[number].toggle) {
-          button_background = button_array[number].element;
-          button_inner = button_array[number].inner;
-          // Turn the background green
-          button_background.style.backgroundColor = '#5BC236';
-          // Animate the toggle
-          button_inner.style.float = 'right';
-          // Should follow global session font styling
-          // Some alignment issues can arise with font-size
-          // These can be adjusted in the btn_toggle.css file
-          button_inner.innerHTML = '<div>I</div>';
-
-          button_array[number].toggle = false;
-        }else {
-          button_background = button_array[number].element;
-          button_inner = button_array[number].inner;
-          // Be sure background-color matches the background color of the content --- ! STYLE
-          button_background.style.backgroundColor = 'white';
-
-          button_inner.style.float = 'left';
-
-          button_inner.innerHTML = '<div dragabble="false">O</div>';
-
-          button_array[number].toggle = true;
-        }
+        animateSwitch(number);
+        return;
       }
     }
   }
 }
 // @POST Button Has Been Toggled To Inverse State
+// @PRE Follows btn_toggle()
+function inButtonArray(number) {
+  if(button_array.length === 0) {
+    return false;
+  }else {
+    for(var i = 0; i < button_array.length; i++) {
+      if(button_array[i] === number){
+        return true;
+      }
+    }
+  }
+  return false;
+}
+// @POST Returns Bool Indicating If Button Already Exists In button_array
+
+function animateSwitch(number) {
+  button_background = button_array[number].element;
+  button_inner = button_array[number].inner;
+  // The toggle switch has been targeted and will now check state
+  if(button_array[number].toggle) {
+    // Call the behavior function before animating
+    // button_array[number].callback;
+    // Turn the background green
+    button_background.style.backgroundColor = '#5BC236';
+    // Animate the toggle
+    button_inner.style.float = 'right';
+    // Should follow global session font styling
+    // Some alignment issues can arise with font-size
+    // These can be adjusted in the btn_toggle.css file
+    button_inner.innerHTML = '<div dragabble="false">I</div>';
+
+    button_array[number].toggle = false;
+  }else {
+    // Call the behavior function before animating
+    // button_array[number].callback;
+    // Be sure background-color matches the background color of the content --- ! STYLE
+    button_background.style.backgroundColor = 'white';
+    // Animate the toggle
+    button_inner.style.float = 'left';
+
+    button_inner.innerHTML = '<div dragabble="false">O</div>';
+
+    button_array[number].toggle = true;
+  }
+}
