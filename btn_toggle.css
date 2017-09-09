@@ -13,7 +13,7 @@ Notes :
 
 .btn_wrapper {
   display:inline-block;
-  vertical-align: text-bottom;
+  vertical-align:text-bottom;
   background-color:#ffffff;
   border:1px solid #ccc;
   border-radius:15px;
@@ -49,7 +49,8 @@ Notes :
   color:#333;
   font-size:12px;
   text-align:center;
-  margin-top:1px;
+  margin-top:.5px;
+  margin-left:.5px;
   opacity:0;
   transition:0.4s;
 }
