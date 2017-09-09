@@ -10,7 +10,7 @@ var button_inner;
 var button_array = []; // This is where our switches are stored
                        // Object is instantiated after first btn_toggle call
 // @PRE Button Element Must Have Unique Index
-// @PRE Button Element Must Use 'onclick="javascript:btn_toggle(uniqueIndex, btn_wrapperID, btn_innerID, behavior());"'
+// @PRE Button Element Must Use 'onclick="javascript:btn_toggle(uniqueIndex, btn_wrapperID, btn_innerID);behavior();"'
 // @PRE behavior() Must Be A Toggle Function
 // In HTML Within The 'btn_wrapper' Div
 function btn_toggle(number, name, inner_name, /*behavior*/) {
