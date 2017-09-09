@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="eventCreation" style="display:none;">
+<input type="text" id="name" placeholder="Enter event name"></input>
+<div class="time"><input type="checkbox" class="checkbox" id="00:00">00:00</div>
+<div class="time"><input type="checkbox" class="checkbox" id="00:30">00:30</div>
+<div class="time"><input type="checkbox" class="checkbox" id="01:00">01:00</div>
+
+<button onclick="constructEvent()">Create Event</button>
+</div>
+</div>
+<button id="eventCreationButton" onclick="showEventCreation()">Create an event on this day</button>
+
+<script src="event.js"></script>
+<script src="constructEvent.js"></script>
+
+<p id="result"></p>
+
+</body>
+</html>
