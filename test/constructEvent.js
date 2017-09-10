@@ -1,6 +1,10 @@
-var eventsArray = [];
+var eventsArray;
 
-var test;
+if(localStorage.getItem("eventsArray") != null) {
+	loadEventsArray();
+} else {
+	eventsArray = [];
+}
 
 function showEventCreation() {
 	document.getElementById("eventCreation").style.display = "block";
@@ -22,8 +26,8 @@ function constructEvent() {
 	
 	eventsArray.push(tempEvent);
 	
-	eventsArray[0].print();
+	saveEventsArray();
 	
-	document.getElementById("result").innerHTML = "check console";
+	document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
 	
 }

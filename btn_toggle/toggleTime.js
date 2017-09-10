@@ -1,4 +1,4 @@
-var timeStyle = 24;
+var timeStyle = 12;
 
 function changeTimeStyle(time) {
 	
