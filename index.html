@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
   <title>team "Team" - Calendar View</title>
 </head>
-
 <body>
 
   <div id="navbar" class="options_toolbar">
@@ -50,6 +48,7 @@
 </div> <!--wrapper-->
 
 <script>
+var time_selections = [];
 // Navbar Functionality
 var toggle = true;
 function toggle_navbar() {
@@ -62,8 +61,9 @@ function toggle_navbar() {
   }
   return;
 }
-// <input type="checkbox" class="checkbox" id="22:30"> Maybe Use?
+
 window.onload = function() {
+  time_selections = [];
   var table_hours = ['12', '12', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '10', '10', '11', '11'];
   var date_view = document.getElementsByClassName('date_view')[0];
   var t_block;
@@ -81,7 +81,7 @@ window.onload = function() {
     if(i < 24) {
       date_view.innerHTML += '<div class="t_block"></div>';
       t_block = document.getElementsByClassName('t_block')[i];
-      t_block.innerHTML += '<div class="time"></div>';
+      t_block.innerHTML += '<div onclick="javascript:toggle_timeAdd(' + i + ');" class="time"></div>';
       t_block.innerHTML += '<div>No Events Scheduled</div>';
       time = document.getElementsByClassName('time')[i];
       text_hour = table_hours[i];
@@ -89,7 +89,7 @@ window.onload = function() {
     } else {
       date_view.innerHTML += '<div class="t_block"></div>';
       t_block = document.getElementsByClassName('t_block')[i];
-      t_block.innerHTML += '<div class="time"></div>';
+      t_block.innerHTML += '<div onclick="javascript:toggle_timeAdd(' + i + ');" class="time"></div>';
       t_block.innerHTML += '<div>No Events Scheduled</div>';
       time = document.getElementsByClassName('time')[i];
       text_hour = table_hours[i - 24];
@@ -97,6 +97,12 @@ window.onload = function() {
     }
   }
 };
+
+function toggle_timeAdd(ID) {
+  time_selections.push(ID);
+  document.getElementsByClassName('t_block')[ID].style.backgroundColor = 'green';
+  document.getElementsByClassName('time')[ID].style.color = 'white';
+}
 </script>
 
 <script src="test/saveEventsArray.js" type="text/javascript"></script>
