@@ -12,22 +12,22 @@ function showEventCreation() {
 }
 
 function constructEvent() {
-	
+
 	var checkedTimes = [];
 	var temp = document.getElementsByClassName("checkbox");
-	
+
 	for(var i = 0; i < temp.length; i++) {
 		if(temp[i].checked) {
 			checkedTimes.push(temp[i].id);
 		}
 	}
-	
+
 	var tempEvent = new Event(document.getElementById("name").value, "today", checkedTimes, []);
-	
+
 	eventsArray.push(tempEvent);
-	
+
 	saveEventsArray();
-	
-	document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
-	
+
+	//document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
+
 }
