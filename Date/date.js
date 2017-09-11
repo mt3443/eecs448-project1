@@ -10,31 +10,31 @@ function updateTime()
 //day of the week if's
 	if(day.getDay() == 0)
 	{
-		weekDay = "Sunday"
+		weekDay = "Sunday,"
 	}
 	if(day.getDay() == 1)
 	{
-		weekDay = "Monday"
+		weekDay = "Monday,"
 	}
 	if(day.getDay() == 2)
 	{
-		weekDay = "Tuesday"
+		weekDay = "Tuesday,"
 	}
 	if(day.getDay() == 3)
 	{
-		weekDay = "Wednesday"
+		weekDay = "Wednesday,"
 	}
 	if(day.getDay() == 4)
 	{
-		weekDay = "Thursday"
+		weekDay = "Thursday,"
 	}
 	if(day.getDay() == 5)
 	{
-		weekDay = "Friday"
+		weekDay = "Friday,"
 	}
 	if(day.getDay() == 6)
 	{
-		weekDay = "Saturday"
+		weekDay = "Saturday,"
 	}
 //month if's
 	if(day.getMonth() == 0)
