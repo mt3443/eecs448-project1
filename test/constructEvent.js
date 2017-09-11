@@ -22,12 +22,15 @@ function constructEvent() {
 		}
 	}
 
-	var tempEvent = new Event(document.getElementById("name").value, "today", checkedTimes, []);
+	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, "today", checkedTimes, [], []);
 
 	eventsArray.push(tempEvent);
 
 	saveEventsArray();
 
 	//document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
-
+	
+	
+	//TODO
+	//CHANGE "TODAY" TO ACTUAL DATE
 }

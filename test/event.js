@@ -1,10 +1,10 @@
-function Event(name, date, times, attendees) {
+function Event(host, name, date, times, canAttend, cannotAttend) {
 	
+	this.host = host;
 	this.name = name;
 	this.date = date;
 	this.times = times; //array of times
-	this.attendees = attendees; //array of the names of attendees
+	this.canAttend = canAttend; //array of the names of people that can attend
+	this.cannotAttend = cannotAttend; //array of the names of people that cannot attend
 	
-	this.numberOfAttendees = function() { return this.attendees.length; };
-	this.print = function() { console.log(this.name + " " + this.date + " " + this.times + " " + this.attendees); };
 }
