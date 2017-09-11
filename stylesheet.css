@@ -43,6 +43,12 @@ body {
   font-size:28px;
   padding:0.6em 0.6em 0 0;
 }
+
+/* Toggled State */
+input[type='checkbox']:checked > .t_block {
+   background-color: red;
+}
+
 .date_view {
   display:block;
   height:100%;
@@ -57,6 +63,7 @@ body {
 }
 
 .t_block {
+  cursor:pointer;
   display:block;
   width:100%;
   min-width:300px;
@@ -74,25 +81,12 @@ body {
 }
 
 .time {
+  cursor:pointer;
   padding-top:10px;
 }
 
 button:hover {
   cursor:pointer;
-}
-
-.btn_left {
-  position:absolute;
-  top:40%;
-  text-align:center;
-  grid-area:btn_left;
-}
-
-.btn_right {
-  position:absolute;
-  top:40%;
-  text-align:center;
-  grid-area:btn_right;
 }
 
 .fa:hover {
