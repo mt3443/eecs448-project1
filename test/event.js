@@ -17,5 +17,5 @@ function Event(host, name, date, times, canAttend, cannotAttend) {
 }
 
 function getEvents() {
-	return [];
+	return eventsArray;
 }

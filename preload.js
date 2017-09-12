@@ -7,7 +7,6 @@ Last Updated : 09 12 17
 */
 // Initialize timeslots and display previously made event
 window.onload = function() {
-  updateTime();
   time_selections = [];
   var table_hours = ['12', '12', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '10', '10', '11', '11'];
   var date_view = document.getElementsByClassName('date_view')[0];
@@ -34,7 +33,9 @@ window.onload = function() {
       };
       time_selections.push(t_block);
       t_block.element.innerHTML += '<div onclick="javascript:toggle_timeAdd('+ i +');" class="time"></div>';
-        // Check for event and display event
+
+      // Check for event and display event
+
       time = document.getElementsByClassName('time')[i];
       time.innerHTML += t_block.time;
     } else {
@@ -47,16 +48,20 @@ window.onload = function() {
         time: text_hour + ':' + text_halfhour + ' pm'
       };
       time_selections.push(t_block);
-      t_block.element.innerHTML += '<div onclick="javascript:toggle_timeAdd('+ i +');" class="time"></div>';
+      t_block.element.innerHTML += '<div onclick="javascript:toggle_timeAdd(' + i + ');" class="time"></div>';
+
         // Check for event and display event
+
       time = document.getElementsByClassName('time')[i];
       time.innerHTML += t_block.time;
     }
   }
+  updateTime(); // date.js
 };
 /*
 ==============================
 SECTION OVERFLOW
+Use : Any additional functions to include not covered by the modes
 ==============================
 */
 var time_selections = [];
