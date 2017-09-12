@@ -7,6 +7,7 @@ function updateTime()
 
 	var weekDay;
 	var month;
+	var date = day.getDate();
 //day of the week if's
 	if(day.getDay() == 0)
 	{
@@ -86,13 +87,9 @@ function updateTime()
 		month = "December "
 	}
 
-	var str1 = month;
-	var str2 = (day.getDate());// + ("th")
+	
+document.getElementById("dayOfWeek").innerHTML = weekDay + "";
+document.getElementById("month").innerHTML = month + "";
+document.getElementById("day").innerHTML = date + "";
 
-	var monthDate = str1.concat(str2);
-
-
-
-document.getElementById("dayOfWeek").innerHTML = weekDay;
-document.getElementById("monthAndDay").innerHTML = monthDate;
 }
