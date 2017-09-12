@@ -86,14 +86,8 @@ function updateTime()
 		month = "December "
 	}
 
-	var str1 = month;
-	var str2 = (day.getDate());// + ("th")
-
-	var monthDate = str1.concat(str2);
-
-
 
 document.getElementById("dayOfWeek").innerHTML = weekDay;
-document.getElementById("month").innerHTML = str1;
-document.getElementById("day").innerHTML = str2;
+document.getElementById("month").innerHTML = month;
+document.getElementById("day").innerHTML = day.getDate();
 }
