@@ -2,7 +2,7 @@
 ==============================
 Filename     : stylesheet.css
 Authored by  : team "Team"
-Last Updated : 09 07 17
+Last Updated : 09 12 17
 ==============================
 */
 body {
@@ -43,6 +43,8 @@ body {
   font-size:28px;
   padding:0.6em 0.6em 0 0;
 }
+
+.date_text { display:inline-block; }
 
 .date_view {
   display:block;
