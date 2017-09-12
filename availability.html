@@ -47,7 +47,6 @@
             <div class="date_view">
             </div> <!--date_view-->
         </div> <!--wrapper-->
-        
         <script>
             var time_selections = [];
             // Navbar Functionality
@@ -65,6 +64,7 @@
         
         window.onload = function() {
             updateTime();
+            loadEventsArray();
             time_selections = [];
             var table_hours = ['12', '12', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '10', '10', '11', '11'];
             var date_view = document.getElementsByClassName('date_view')[0];
@@ -92,7 +92,14 @@
                     date_view.innerHTML += '<div class="t_block"></div>';
                     t_block = document.getElementsByClassName('t_block')[i];
                     t_block.innerHTML += '<div onclick="javascript:toggle_timeAdd(' + i + ');" class="time"></div>';
-                    t_block.innerHTML += '<div>No Events Scheduled</div>';
+                    if (isEventScheduled === true) {
+                        t_block.innerHTML += '<div>EVENT!</div>';
+                        for (var i in eventsArray) {
+                            t_block.innerHTML += 'TODO add name';   // Shows event if there is one scheduled
+                        }
+                    }else{
+                        t_block.innerHTML += '<div>No Events Scheduled</div>';
+                    }
                     time = document.getElementsByClassName('time')[i];
                     text_hour = table_hours[i - 24];
                     time.innerHTML += text_hour + ':' + text_halfhour + ' pm';
