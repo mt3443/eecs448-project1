@@ -10,7 +10,6 @@
   <title>team "Team" - Calendar View</title>
 </head>
 <body>
-
   <div id="navbar" class="options_toolbar">
     <div onclick="javascript:toggle_navbar();" style="display:block;width:100%;padding-left:50px;font-size:28px;">
       &times; Close Options</div>
@@ -33,7 +32,7 @@
 
       <center>
       <div id="eventCreation" style="display:none;position:absolute;top:200px;right:0.5em;">
-      <input type="text" id="host" placeholder="Enter your name"></input>
+      <input style="border-radius:5px;" type="text" id="host" placeholder="Enter your name"></input>
       <input type="text" id="name" placeholder="Enter event name"></input>
 
       <button onclick="javascript:constructEvent();">Create Event</button>
@@ -62,7 +61,7 @@ function toggle_navbar() {
   }
   return;
 }
-
+// Initialize timeslots and display previously made event
 window.onload = function() {
   updateTime();
   time_selections = [];
@@ -81,29 +80,65 @@ window.onload = function() {
       text_halfhour = '00';
     }
     if(i < 24) {
-      date_view.innerHTML += '<div class="t_block"></div>';
-      t_block = document.getElementsByClassName('t_block')[i];
-      t_block.innerHTML += '<div onclick="javascript:toggle_timeAdd(' + i + ');" class="time"></div>';
-      t_block.innerHTML += '<div>No Events Scheduled</div>';
-      time = document.getElementsByClassName('time')[i];
       text_hour = table_hours[i];
-      time.innerHTML += text_hour + ':' + text_halfhour + ' am';
-    } else {
       date_view.innerHTML += '<div class="t_block"></div>';
-      t_block = document.getElementsByClassName('t_block')[i];
-      t_block.innerHTML += '<div onclick="javascript:toggle_timeAdd(' + i + ');" class="time"></div>';
-      t_block.innerHTML += '<div>No Events Scheduled</div>';
+      t_block = {
+        element: document.getElementsByClassName('t_block')[i],
+        selected: false,
+        events: getEvents(),
+        time: text_hour + ':' + text_halfhour + ' am'
+      };
+      time_selections.push(t_block);
+      t_block.element.innerHTML += '<div onclick="javascript:toggle_timeAdd('+ i +');" class="time"></div>';
+        // Check for event and display event
       time = document.getElementsByClassName('time')[i];
+      time.innerHTML += t_block.time;
+    } else {
       text_hour = table_hours[i - 24];
-      time.innerHTML += text_hour + ':' + text_halfhour + ' pm';
+      date_view.innerHTML += '<div class="t_block"></div>';
+      t_block = {
+        element: document.getElementsByClassName('t_block')[i],
+        selected: false,
+        events: getEvents(),
+        time: text_hour + ':' + text_halfhour + ' pm'
+      };
+      time_selections.push(t_block);
+      t_block.element.innerHTML += '<div onclick="javascript:toggle_timeAdd('+ i +');" class="time"></div>';
+        // Check for event and display event
+      time = document.getElementsByClassName('time')[i];
+      time.innerHTML += t_block.time;
     }
   }
 };
+// Toggles the selected behavior of each timeslot
+function toggle_timeAdd(index) {
+  if(!time_selections[index].selected) {
+    document.getElementsByClassName('t_block')[index].style.backgroundColor = "green";
+    document.getElementsByClassName('time')[index].style.color = "#ffffff";
+    time_selections[index].selected = true;
+  }else {
+    document.getElementsByClassName('t_block')[index].style.backgroundColor = "#ffffff";
+    document.getElementsByClassName('time')[index].style.color = "#333";
+    time_selections[index].selected = false;
+  }
+}
+// Accessed in constructEvent.js
+function getSelectedTimes() {
+  var timeslots = [];
+  for(var i = 0; i < time_selections.length; i++) {
+    if(time_selections[i].selected) {
+      timeslots.push(time_selections[i].time);
+    }
+  }
+  return timeslots;
+}
 
-function toggle_timeAdd(ID) {
-  time_selections.push(ID);
-  document.getElementsByClassName('t_block')[ID].style.backgroundColor = 'green';
-  document.getElementsByClassName('time')[ID].style.color = 'white';
+function resetSelectedTimes() {
+  for(var i = 0; i < time_selections.length; i++) {
+    if(time_selections[i].selected) {
+      toggle_timeAdd(i);
+    }
+  }
 }
 </script>
 

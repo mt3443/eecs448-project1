@@ -1,4 +1,6 @@
 var eventsArray;
+var day = new Date();
+var date = '' + day.getMonth() + '/' + day.getDay();
 
 if(localStorage.getItem("eventsArray") != null) {
 	loadEventsArray();
@@ -11,26 +13,24 @@ function showEventCreation() {
 	document.getElementById("eventCreationButton").style.display = "none";
 }
 
+function hideEventCreation() {
+	document.getElementById("eventCreation").style.display = "none";
+	document.getElementById("eventCreationButton").style.display = "block";
+}
+
 function constructEvent() {
 
-	var checkedTimes = [];
-	var temp = document.getElementsByClassName("checkbox");
+	var checkedTimes = getSelectedTimes();
 
-	for(var i = 0; i < temp.length; i++) {
-		if(temp[i].checked) {
-			checkedTimes.push(temp[i].id);
-		}
-	}
-
-	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, "today", checkedTimes, [], []);
+	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, date, checkedTimes, [host.value], []);
 
 	eventsArray.push(tempEvent);
 
 	saveEventsArray();
 
+	hideEventCreation();
+
+	resetSelectedTimes();
+
 	//document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
-	
-	
-	//TODO
-	//CHANGE "TODAY" TO ACTUAL DATE
 }

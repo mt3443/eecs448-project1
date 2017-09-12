@@ -8,7 +8,7 @@ Last Updated : 09 07 17
 body {
   font-size:18px;
   font-family:sans-serif;
-  color:#666;
+  color:#333;
 }
 
 .wrapper {
@@ -44,11 +44,6 @@ body {
   padding:0.6em 0.6em 0 0;
 }
 
-/* Toggled State */
-input[type='checkbox']:checked > .t_block {
-   background-color: red;
-}
-
 .date_view {
   display:block;
   height:100%;
@@ -70,7 +65,7 @@ input[type='checkbox']:checked > .t_block {
   margin:0;
   padding:0;
   border-bottom:1px solid #000;
-  background-color:rgba(255,255,255,0.5);
+  background-color:#ffffff;
   text-align:center;
 }
 

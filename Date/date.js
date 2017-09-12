@@ -95,10 +95,4 @@ function updateTime()
 
 document.getElementById("dayOfWeek").innerHTML = weekDay;
 document.getElementById("monthAndDay").innerHTML = monthDate;
-
-
-
-
-
-
 }
