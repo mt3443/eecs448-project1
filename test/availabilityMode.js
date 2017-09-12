@@ -1,9 +1,8 @@
-//function attendEvent(){
-//	var canAttend = false;
-//	for ( var i, i < eventsArray.length ,i++)
-//        if (eventsArray[i].times  && eventsArray[i].date) {
-//            canAttend = true;
-//        }
-//	return canAttend;
-//}
+function isEventScheduled(){
+	var hasEvent = false;
+    if (eventsArray[i].times  && eventsArray[i].date) {
+        hasEvent = true;
+    }
+	return hasEvent;
+}
 
