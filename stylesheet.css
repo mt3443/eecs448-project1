@@ -33,6 +33,7 @@ body {
   top:0px;
   right:0px;
   height:200px;
+  width:340px;
   background-color:rgba(255,255,255,0.5);
   grid-area:date_header;
 }
@@ -44,7 +45,11 @@ body {
   padding:0.6em 0.6em 0 0;
 }
 
-.date_text { display:inline-block; }
+.date_text {
+  display:inline-block;
+  float:right;
+  width:340px;
+}
 
 .date_view {
   display:block;
@@ -84,6 +89,12 @@ body {
 
 button:hover {
   cursor:pointer;
+}
+
+.btn {
+  display:inline-block;
+  float:right;
+  padding:0.5em;
 }
 
 .fa:hover {

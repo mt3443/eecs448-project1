@@ -29,17 +29,19 @@
 
       <div class="dayname" id="dayOfWeek"></div>
       <div class="date_text" id="date"></div>
-	  
-	  <div>
-	  <button onclick="monthBackward()">month backward</button>
-	  <button onclick="monthForward()">month forward</button>
+
+    <div>
+      <div class="btn" onclick="dayForward()"><i class="fa fa-arrow-right"></i></div>
+      <div class="btn">Day</div>
+  	  <div class="btn" onclick="dayBackward()"><i class="fa fa-arrow-left"></i></div>
+  	</div>
+
+    <div>
+      <div class="btn" onclick="monthForward()"><i class="fa fa-arrow-right"></i></div>
+      <div class="btn">Month</div>
+	    <div class="btn" onclick="monthBackward()"><i class="fa fa-arrow-left"></i></div>
 	  </div>
-	  
-	  <div>
-	  <button onclick="dayBackward()">day backward</button>
-	  <button onclick="dayForward()">day forward</button>
-	  </div>
-	  
+
       <center>
       <div id="eventCreation" style="display:none;position:absolute;top:200px;right:0.5em;">
       <input style="border-radius:5px;" type="text" id="host" placeholder="Enter your name"></input>
