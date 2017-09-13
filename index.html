@@ -27,10 +27,19 @@
 
     <span class="date_header">
 
-      <div class="dayname" id="dayOfWeek">Sunday,</div>
-      <div class="date_text" id="month">August</div>
-      <div class="date_text" id="day">9</div>
-
+      <div class="dayname" id="dayOfWeek"></div>
+      <div class="date_text" id="date"></div>
+	  
+	  <div>
+	  <button onclick="monthBackward()">month backward</button>
+	  <button onclick="monthForward()">month forward</button>
+	  </div>
+	  
+	  <div>
+	  <button onclick="dayBackward()">day backward</button>
+	  <button onclick="dayForward()">day forward</button>
+	  </div>
+	  
       <center>
       <div id="eventCreation" style="display:none;position:absolute;top:200px;right:0.5em;">
       <input style="border-radius:5px;" type="text" id="host" placeholder="Enter your name"></input>
@@ -53,6 +62,6 @@
 <script src="mode_availability.js" type="text/javascript"></script>
 <script src="btn_toggle/toggleTime.js" type="text/javascript"></script>
 <script src="btn_toggle/btn_toggle.js" type="text/javascript"></script>
-<script src="Date/date.js" type="text/javascript"></script>
+<script src="date.js" type="text/javascript"></script>
 </body>
 </html>
