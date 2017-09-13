@@ -94,7 +94,7 @@ button:hover {
 .btn {
   display:inline-block;
   float:right;
-  padding:0.5em;
+  padding:0.5em 1em 0.5em 0.5em;
 }
 
 .fa:hover {
