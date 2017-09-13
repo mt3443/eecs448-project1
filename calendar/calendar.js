@@ -21,7 +21,7 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">January</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -31,8 +31,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">February</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -41,8 +41,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">March</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -51,8 +51,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">April</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -61,8 +61,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">May</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -71,8 +71,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">June</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -81,8 +81,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">July</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -91,8 +91,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">August</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -101,8 +101,8 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">September</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -111,8 +111,8 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">October</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -121,8 +121,8 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">November</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
   };
 
@@ -131,8 +131,8 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
-			draw(this.number_of_days, this.weekday);
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">December</div>';
+			drawDays(this.number_of_days, this.weekday);
 		}
 	};
 

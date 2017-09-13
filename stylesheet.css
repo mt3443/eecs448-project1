@@ -33,7 +33,7 @@ body {
   top:0px;
   right:0px;
   height:200px;
-  width:340px;
+  width:330px;
   background-color:rgba(255,255,255,0.5);
   grid-area:date_header;
 }
@@ -57,6 +57,7 @@ body {
   min-height:100%;
   padding:0;
   grid-area:date_view;
+  box-shadow:1px 1px 10px -3px #000;
 }
 
 .t_block:first-of-type {
@@ -71,7 +72,9 @@ body {
   min-width:300px;
   margin:0;
   padding:0;
-  border-bottom:1px solid #000;
+  border-bottom:1px solid #333;
+  border-left:1px solid #333;
+  border-right:1px solid #333;
   background-color:#ffffff;
   text-align:center;
 }
@@ -92,6 +95,13 @@ button:hover {
 }
 
 .btn {
+  display:inline-block;
+  float:right;
+  padding:0.5em 1em 0.5em 0.5em;
+}
+
+.btn_NOHOVER {
+  cursor:default;
   display:inline-block;
   float:right;
   padding:0.5em 1em 0.5em 0.5em;
@@ -159,6 +169,7 @@ button:hover {
   transition:0.4s;
   z-index:2;
 }
+
 #navbar > div {
   padding:20px;
 }

@@ -1,13 +1,13 @@
 function Event(host, name, date, times, canAttend, cannotAttend) {
 	this.host = host;
 	this.name = name;
-	this.color = function() {
+	this.getColor = function() {
 		var letters = '0123456789ABCDEF';
 	  var color = '#';
 	  for (var i = 0; i < 6; i++) {
 	    color += letters[Math.floor(Math.random() * 16)];
 	  }
-	  return color; // Returns in form #000000 - #FFFFFF
+	  return("color"); // Returns in form #000000 - #FFFFFF
 	};
 	this.date = date;
 	this.times = times; //array of times
