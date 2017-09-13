@@ -4,24 +4,28 @@ function monthForward() {
 	day.setMonth(day.getMonth() + 1);
 	updateTime();
 	cal = new Calendar();
+	displayEvents();
 }
 
 function monthBackward() {
 	day.setMonth(day.getMonth() - 1);
 	updateTime();
 	cal = new Calendar();
+	displayEvents();
 }
 
 function dayForward() {
 	day.setDate(day.getDate() + 1);
 	updateTime();
 	cal = new Calendar();
+	displayEvents();
 }
 
 function dayBackward() {
 	day.setDate(day.getDate() - 1);
 	updateTime();
 	cal = new Calendar();
+	displayEvents();
 }
 
 function updateTime()
