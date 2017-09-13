@@ -1,9 +1,18 @@
 var day = new Date();
 
+function removeExistingEvents() {
+	var elementsToRemove = document.getElementsByClassName("eventDisplay");
+	
+	while(elementsToRemove.length != 0) {
+		elementsToRemove[0].remove();
+	}
+}
+
 function monthForward() {
 	day.setMonth(day.getMonth() + 1);
 	updateTime();
 	cal = new Calendar();
+	removeExistingEvents();
 	displayEvents();
 }
 
@@ -11,6 +20,7 @@ function monthBackward() {
 	day.setMonth(day.getMonth() - 1);
 	updateTime();
 	cal = new Calendar();
+	removeExistingEvents();
 	displayEvents();
 }
 
@@ -18,6 +28,7 @@ function dayForward() {
 	day.setDate(day.getDate() + 1);
 	updateTime();
 	cal = new Calendar();
+	removeExistingEvents();
 	displayEvents();
 }
 
@@ -25,6 +36,7 @@ function dayBackward() {
 	day.setDate(day.getDate() - 1);
 	updateTime();
 	cal = new Calendar();
+	removeExistingEvents();
 	displayEvents();
 }
 
