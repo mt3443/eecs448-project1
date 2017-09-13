@@ -9,8 +9,13 @@
 <body>
   <div id="Calendar"></div>
   <script>
-
+window.onload = function() {
+  var c = new Calendar();
+  c.January.draw();
+};
   </script>
   <script src="calendar.js" type="text/javascript"></script>
+  <script src="../date.js" type="text/javascript"></script>
+
 </body>
 </html>

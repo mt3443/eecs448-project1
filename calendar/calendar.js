@@ -12,165 +12,130 @@ function checkLeapYear() {
 }
 
 function Calendar() {
-  
+var d = new Date(2017, 1, 1);
   this.year = day.getFullYear();
-  
+
   this.January = {
+		weekday: d.getDay(),
     number_of_days: 31,
-    month_prev: this.December,
-    month_next: this.February,
     draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">January</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			drawDays(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.February = {
     number_of_days: checkLeapYear(),
-    month_prev: this.January,
-    month_next: this.March,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">February</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.March = {
     number_of_days: 31,
-    month_prev: this.February,
-    month_next: this.April,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">March</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.April = {
     number_of_days: 30,
-    month_prev: this.March,
-    month_next: this.May,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">April</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.May = {
     number_of_days: 31,
-    month_prev: this.April,
-    month_next: this.June,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">May</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.June = {
     number_of_days: 30,
-    month_prev: this.May,
-    month_next: this.July,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">July</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.July = {
     number_of_days: 31,
-    month_prev: this.June,
-    month_next: this.August,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">July</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.August = {
     number_of_days: 31,
-    month_prev: this.July,
-    month_next: this.September,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">August</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.September = {
     number_of_days: 30,
-    month_prev: this.August,
-    month_next: this.October,
-    draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">September</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+		draw: function() {
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.October = {
     number_of_days: 31,
-    month_prev: this.September,
-    month_next: this.November,
     draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">October</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.November = {
     number_of_days: 30,
-    month_prev: this.October,
-    month_next: this.December,
     draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">November</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
   };
-  
+
   this.December = {
     number_of_days: 31,
-    month_prev: this.November,
-    month_next: this.January,
     draw: function() {
-      var wrapper = document.getElementById('Calendar');
-      wrapper.innerHTML += '<div class="monthname">December</div>';
-      for(var i = 0; i < this.number_of_days; i++) {
-        wrapper.innerHTML += '<div style="border:1px solid #000;" class="day">' + i + '</div>';
-      }
-    }
-  };
-  
+			var wrapper = document.getElementById('Calendar');
+			wrapper.style.width = '182px';
+			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			draw(this.number_of_days, this.weekday);
+		}
+	};
+
   /* Use This For All Months
   this.MONTHNAME = {
     number_of_days: #,
@@ -178,4 +143,17 @@ function Calendar() {
     month_next: this.NEXTMONTHNAME
   };
   */
+}
+
+function drawDays(number_of_days, weekday) {
+		var wrapper = document.getElementById('Calendar');
+		for(var i = 0; i < number_of_days; i++) {
+			if(i === 0) {
+				var margin_left = (weekday + 1) * 26;
+				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
+			}else {
+				wrapper.innerHTML += '<div style="display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
+			}
+		}
+		return;
 }
