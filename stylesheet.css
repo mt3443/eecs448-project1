@@ -97,6 +97,29 @@ button:hover {
   padding:0.5em 1em 0.5em 0.5em;
 }
 
+.btn:hover {
+  cursor:pointer;
+  color:lightblue;
+  transition:0.4s;
+}
+
+.btn_content {
+  display:block;
+  float:right;
+  background-color:lightblue;
+  color:#333;
+  border-radius:15px;
+  padding:0.5em;
+  margin-right:20px;
+}
+
+.btn_content:hover {
+  cursor:pointer;
+  background-color:#333;
+  color:#fff;
+  transition:0.4s;
+}
+
 .fa:hover {
   cursor:pointer;
   color:lightblue;

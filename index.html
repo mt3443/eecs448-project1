@@ -30,28 +30,29 @@
       <div class="dayname" id="dayOfWeek"></div>
       <div class="date_text" id="date"></div>
 
-    <div>
-      <div class="btn" onclick="dayForward()"><i class="fa fa-arrow-right"></i></div>
-      <div class="btn">Day</div>
-  	  <div class="btn" onclick="dayBackward()"><i class="fa fa-arrow-left"></i></div>
-  	</div>
+      <div>
+        <div class="btn" onclick="dayForward()"><i class="fa fa-arrow-right"></i></div>
+        <div class="btn">Day</div>
+  	    <div class="btn" onclick="dayBackward()"><i class="fa fa-arrow-left"></i></div>
+  	  </div>
 
-    <div>
-      <div class="btn" onclick="monthForward()"><i class="fa fa-arrow-right"></i></div>
-      <div class="btn">Month</div>
-	    <div class="btn" onclick="monthBackward()"><i class="fa fa-arrow-left"></i></div>
-	  </div>
+      <div>
+        <div class="btn" onclick="monthForward()"><i class="fa fa-arrow-right"></i></div>
+        <div class="btn">Month</div>
+	      <div class="btn" onclick="monthBackward()"><i class="fa fa-arrow-left"></i></div>
+	    </div>
 
       <center>
-      <div id="eventCreation" style="display:none;position:absolute;top:200px;right:0.5em;">
-      <input style="border-radius:5px;" type="text" id="host" placeholder="Enter your name"></input>
-      <input type="text" id="name" placeholder="Enter event name"></input>
+      <div id="eventCreation" style="display:none;margin:1em;">
+        New Event
+      <input style="display:block;line-height:24px;width:150px;" type="text" id="host" placeholder="Enter your name"></input>
+      <input style="display:block;line-height:24px;width:150px;" type="text" id="name" placeholder="Enter event name"></input>
 
-      <button onclick="javascript:constructEvent();">Create Event</button>
+      <div class="btn" style="border:1px solid #333;width:150px;margin-right:62.5px;" onclick="javascript:constructEvent();"><i class="fa fa-plus"></i> Create Event</div>
       </div>
       </center>
 
-      <button style="position:absolute;top:200px;right:0.5em;" id="eventCreationButton" onclick="javascript:showEventCreation();">Create an event on this day</button>
+      <div class="btn_content" id="eventCreationButton" onclick="javascript:showEventCreation();">Add An Event</div>
 
     </span>
 
