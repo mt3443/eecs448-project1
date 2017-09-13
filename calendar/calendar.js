@@ -21,7 +21,7 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">January</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">January</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -31,7 +31,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">February</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">February</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -41,7 +41,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">March</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">March</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -51,7 +51,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">April</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">April</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -61,7 +61,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">May</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">May</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -71,7 +71,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">June</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">June</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -81,7 +81,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">July</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">July</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -91,7 +91,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">August</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">August</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -101,7 +101,7 @@ var d = new Date(2017, 1, 1);
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">September</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">September</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -111,7 +111,7 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">October</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">October</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -121,7 +121,7 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">November</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">November</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
   };
@@ -131,7 +131,7 @@ var d = new Date(2017, 1, 1);
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
 			wrapper.style.width = '182px';
-			wrapper.innerHTML += '<div style="width:182px;height:20px;class="monthname">December</div>';
+			wrapper.innerHTML += '<div style="width:182px;height:28px;class="monthname">December</div>';
 			drawDays(this.number_of_days, this.weekday);
 		}
 	};
@@ -150,18 +150,10 @@ function drawDays(number_of_days, weekday) {
 		for(var i = 0; i < number_of_days; i++) {
 			if(i === 0) {
 				var margin_left = (weekday + 1) * 26;
-				if(checkToday(i)) {
-					wrapper.innerHTML += '<div style="background-color:lightblue;margin-left:' + margin_left + 'px;display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
-				}else {
-					wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
-				}
+				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
 			}else {
 				wrapper.innerHTML += '<div style="display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
 			}
 		}
 		return;
-}
-
-function checkToday(index) {
-	
 }
