@@ -150,9 +150,9 @@ function drawDays(number_of_days, weekday) {
 		for(var i = 0; i < number_of_days; i++) {
 			if(i === 0) {
 				var margin_left = (weekday + 1) * 26;
-				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
+				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + (i + 1) + '</div>';
 			}else {
-				wrapper.innerHTML += '<div style="display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + i + '</div>';
+				wrapper.innerHTML += '<div style="display:inline-block;text-align:center;border-radius:5px;padding:2px;width:20px;height:20px;border:1px solid #333;" class="day">' + (i + 1) + '</div>';
 			}
 		}
 		return;
