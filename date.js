@@ -3,21 +3,25 @@ var day = new Date();
 function monthForward() {
 	day.setMonth(day.getMonth() + 1);
 	updateTime();
+	cal = new Calendar();
 }
 
 function monthBackward() {
 	day.setMonth(day.getMonth() - 1);
 	updateTime();
+	cal = new Calendar();
 }
 
 function dayForward() {
 	day.setDate(day.getDate() + 1);
 	updateTime();
+	cal = new Calendar();
 }
 
 function dayBackward() {
 	day.setDate(day.getDate() - 1);
 	updateTime();
+	cal = new Calendar();
 }
 
 function updateTime()

@@ -1,8 +1,19 @@
 function checkLeapYear() {
-	
+	if(day.getFullYear() % 4 == 0) {
+		if(day.getFullYear() % 100 == 0) {
+			if(day.getFullYear() % 400 == 0) {
+				return 29;
+			}
+			return 28;
+		}
+		return 29;
+	}
+	return 28;
 }
 
 function Calendar() {
+  
+  this.year = day.getFullYear();
   
   this.January = {
     number_of_days: 31,
@@ -18,7 +29,7 @@ function Calendar() {
   };
   
   this.February = {
-    number_of_days: 28,
+    number_of_days: checkLeapYear(),
     month_prev: this.January,
     month_next: this.March,
     draw: function() {

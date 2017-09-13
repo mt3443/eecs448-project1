@@ -7,6 +7,7 @@ Last Updated : 09 12 17
 */
 var eventsArray;
 var day = new Date();
+var cal = new Calendar();
 var date = '' + day.getMonth() + '/' + day.getDay();
 // Event Object
 function Event(host, name, date, times, canAttend, cannotAttend) {
