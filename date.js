@@ -2,24 +2,30 @@ var day = new Date();
 
 function removeExistingEvents() {
 	var elementsToRemove = document.getElementsByClassName("eventDisplay");
-	
+
 	while(elementsToRemove.length != 0) {
 		elementsToRemove[0].remove();
 	}
 }
 
 function monthForward() {
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	var month_next = monthToString(day.getMonth() + 1);
+  cal[month_next].draw();
 	day.setMonth(day.getMonth() + 1);
 	updateTime();
-	cal = new Calendar();
 	removeExistingEvents();
 	displayEvents();
 }
 
 function monthBackward() {
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	var month_prev = monthToString(day.getMonth() + 1);
+  cal[month_prev].draw();
 	day.setMonth(day.getMonth() - 1);
 	updateTime();
-	cal = new Calendar();
 	removeExistingEvents();
 	displayEvents();
 }
@@ -92,36 +98,35 @@ function updateTime()
 
 
 	document.getElementById("dayOfWeek").innerHTML = weekDay + "";
-	document.getElementById("date").innerHTML = monthToString() + " " + day.getDate() + ", " + day.getFullYear();
+	document.getElementById("date").innerHTML = monthToString(day.getMonth()) + " " + day.getDate() + ", " + day.getFullYear();
 
 }
 
-function monthToString() {
-	var month;
+function monthToString(month) {
 	//month if's
-	if(day.getMonth() == 0) {
+	if(month == 0) {
 		month = "January"
-	} else if(day.getMonth() == 1) {
+	} else if(month == 1) {
 		month = "February"
-	} else if(day.getMonth() == 2) {
+	} else if(month == 2) {
 		month = "March"
-	} else if(day.getMonth() == 3) {
+	} else if(month == 3) {
 		month = "April"
-	} else if(day.getMonth() == 4) {
+	} else if(month == 4) {
 		month = "May"
-	} else if(day.getMonth() == 5) {
+	} else if(month == 5) {
 		month = "June"
-	} else if(day.getMonth() == 6) {
+	} else if(month == 6) {
 		month = "July"
-	} else if(day.getMonth() == 7) {
+	} else if(month == 7) {
 		month = "August"
-	} else if(day.getMonth() == 8) {
+	} else if(month == 8) {
 		month = "September"
-	} else if(day.getMonth() == 9) {
+	} else if(month == 9) {
 		month = "October"
-	} else if(day.getMonth() == 10) {
+	} else if(month == 10) {
 		month = "November"
-	} else if(day.getMonth() == 11) {
+	} else if(month == 11) {
 		month = "December"
 	}
 	return month;

@@ -7,7 +7,7 @@ function Event(host, name, date, times, canAttend, cannotAttend) {
 	  for (var i = 0; i < 6; i++) {
 	    color += letters[Math.floor(Math.random() * 16)];
 	  }
-	  return("color"); // Returns in form #000000 - #FFFFFF
+	  return color; // Returns Broken Form FIX THIS
 	};
 	this.date = date;
 	this.times = times; //array of times

@@ -26,10 +26,6 @@ function Event(host, name, date, times, canAttend, cannotAttend) {
 	this.cannotAttend = cannotAttend; //array of the names of people that cannot attend
 }
 
-function getEvents() {
-	return [];
-}
-
 if(localStorage.getItem("eventsArray") != null) {
 	loadEventsArray();
 } else {

@@ -16,7 +16,7 @@ function displayEvents() {
 			for(var j = 0; j < eventsArray[i].times.length; j++) { //run through the times that event is occuring
 				for(var k = 0; k < document.getElementsByClassName("time").length; k++) {
 					if(document.getElementsByClassName("time")[k].innerHTML == eventsArray[i].times[j] || document.getElementsByClassName("time")[k].innerHTML == to24hour(eventsArray[i].times[j])) {
-						var color = eventsArray[i].getColor; 		// FIX THIS
+						var color = eventsArray[i].getColor;		// FIX THIS
 						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + color + '" class="eventDisplay">' + eventsArray[i].name + ', hosted by ' + eventsArray[i].host + '</div>';
 					}
 				}
