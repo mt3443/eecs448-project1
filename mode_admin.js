@@ -8,7 +8,6 @@ Last Updated : 09 12 17
 var eventsArray;
 var day = new Date();
 var cal = new Calendar();
-var date = '' + day.getMonth() + '/' + day.getDay();
 // Event Object
 function Event(host, name, date, times, canAttend, cannotAttend) {
 	this.host = host;
@@ -50,8 +49,8 @@ function hideEventCreation() {
 function constructEvent() {
 
 	var checkedTimes = getSelectedTimes();
-
-	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, date, checkedTimes, [host.value], []);
+	var tempDate = document.getElementById("date").innerHTML;
+	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, tempDate, checkedTimes, [host.value], []);
 
 	eventsArray.push(tempEvent);
 

@@ -57,6 +57,7 @@ window.onload = function() {
     }
   }
   updateTime(); // date.js
+  displayEvents(); //mode_availability.js
 };
 /*
 ==============================
