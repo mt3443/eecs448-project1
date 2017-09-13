@@ -1,5 +1,43 @@
 var timeStyle = 12;
 
+function to24hour(input) {
+	if(input.substr(input.length - 1, 1) != 'm') {
+		return input;
+	}
+	
+	if(input == "12:00 am") {
+		return "00:00";
+	}
+	
+	if(input == "12:30 am") {
+		return "00:30";
+	}
+	
+	if(input == "12:00 pm") {
+		return "12:00";
+	}
+	
+	if(input == "12:30 pm") {
+		return "12:30";
+	}
+	
+	if(input.substr(input.length - 2,2) == "am") {
+		if(input.charAt(1) == ':') {
+			return "0" + input.substr(0,4);
+		} else {
+			return input.substr(0,5);
+		}
+	} else {
+		if(input.charAt(1) == ':') {
+			var hour = input.substr(0,1);
+			return parseInt(hour) + 12 + input.substr(1,3);
+		} else {
+			var hour = input.substr(0,2);
+			return parseInt(hour) + 12 + input.substr(2,3);
+		}
+	}
+}
+
 function changeTimeStyle(time) {
 	
 	var hour;
