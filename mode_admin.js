@@ -43,18 +43,16 @@ function hideEventCreation() {
 }
 
 function constructEvent() {
-
-	var checkedTimes = getSelectedTimes();
-	var tempDate = document.getElementById("date").innerHTML;
-	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, tempDate, checkedTimes, [host.value], []);
-
-	eventsArray.push(tempEvent);
-
-	saveEventsArray();
-
-	hideEventCreation();
-
-	resetSelectedTimes();
+	if(getSelectedTimes().length == 0) {
+		alert("Please select at least 1 time block for your event");
+	} else {
+		var tempDate = document.getElementById("date").innerHTML;
+		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, tempDate, getSelectedTimes(), [host.value], []);
+		eventsArray.push(tempEvent);
+		saveEventsArray();
+		hideEventCreation();
+		resetSelectedTimes();
+	}
 
 	//document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
 }
