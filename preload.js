@@ -7,7 +7,7 @@ Last Updated : 09 12 17
 */
 // Initialize timeslots and display previously made event
 window.onload = function() {
-  var month_current = monthToString(day.getMonth());
+  var month_current = monthToString(today.getMonth());
   cal[month_current].draw();
   time_selections = [];
   var table_hours = ['12', '12', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '10', '10', '11', '11'];
@@ -17,7 +17,7 @@ window.onload = function() {
   var text_hour;
   var text_halfhour;
   var am = true;
-  var number_of_halfhours = 48; // 24 * 2
+  var number_of_halfhours = 48; // 24 Hours * 2
   for(var i = 0; i < number_of_halfhours; i++) {
     if(i % 2 === 1) {
       text_halfhour = '30';
@@ -71,9 +71,11 @@ var toggle = true;
 function toggle_navbar() {
   if(toggle) {
     document.getElementById('navbar').style.left = "0px";
+    document.getElementById('navbar').style.boxShadow = "10px 0px 30px 0px #666";
     toggle = false;
   }else {
-    document.getElementById('navbar').style.left = "-300px";
+    document.getElementById('navbar').style.boxShadow = "none";
+    document.getElementById('navbar').style.left = "-340px";
     toggle = true;
   }
   return;
@@ -81,12 +83,12 @@ function toggle_navbar() {
 // Toggles the selected behavior of each timeslot
 function toggle_timeAdd(index) {
   if(!time_selections[index].selected) {
-    document.getElementsByClassName('t_block')[index].style.backgroundColor = "orange";
-    document.getElementsByClassName('time')[index].style.color = "#333";
+    document.getElementsByClassName('t_block')[index].style.backgroundColor = "lightyellow";
+    document.getElementsByClassName('time')[index].style.color = "#02779E";
     time_selections[index].selected = true;
   }else {
-    document.getElementsByClassName('t_block')[index].style.backgroundColor = "#eee";
-    document.getElementsByClassName('time')[index].style.color = "#333";
+    document.getElementsByClassName('t_block')[index].style.backgroundColor = "#f4f4f4";
+    document.getElementsByClassName('time')[index].style.color = "#02779E";
     time_selections[index].selected = false;
   }
 }

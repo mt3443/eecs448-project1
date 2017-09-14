@@ -9,9 +9,9 @@ function removeExistingEvents() {
 function monthForward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
-	var month_next = monthToString(day.getMonth() + 1);
+	var month_next = monthToString(today.getMonth() + 1);
 	cal[month_next].draw();
-	day.setMonth(day.getMonth() + 1);
+	today.setMonth(today.getMonth() + 1);
 	updateTime();
 	removeExistingEvents();
 	displayEvents();
@@ -20,26 +20,32 @@ function monthForward() {
 function monthBackward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
-	var month_prev = monthToString(day.getMonth() - 1);
+	var month_prev = monthToString(today.getMonth() - 1);
 	cal[month_prev].draw();
-	day.setMonth(day.getMonth() - 1);
+	today.setMonth(today.getMonth() - 1);
 	updateTime();
 	removeExistingEvents();
 	displayEvents();
 }
 
 function dayForward() {
-	day.setDate(day.getDate() + 1);
-	updateTime();
 	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	today.setDate(today.getDate() + 1);
+	updateTime();
+	var month = monthToString(today.getMonth());
+	cal[month].draw();
 	removeExistingEvents();
 	displayEvents();
 }
 
 function dayBackward() {
-	day.setDate(day.getDate() - 1);
-	updateTime();
 	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	today.setDate(today.getDate() - 1);
+	updateTime();
+	var month = monthToString(today.getMonth());
+	cal[month].draw();
 	removeExistingEvents();
 	displayEvents();
 }
@@ -49,54 +55,24 @@ function updateTime()
 
 	var weekDay;
 	//day of the week if's
-	if(day.getDay() == 0) {
+	if(today.getDay() == 6) {
 		weekDay = "Sunday"
-	} else if(day.getDay() == 1) {
+	} else if(today.getDay() == 0) {
 		weekDay = "Monday"
-	} else if(day.getDay() == 2) {
+	} else if(today.getDay() == 1) {
 		weekDay = "Tuesday"
-	} else if(day.getDay() == 3) {
+	} else if(today.getDay() == 2) {
 		weekDay = "Wednesday"
-	} else if(day.getDay() == 4) {
+	} else if(today.getDay() == 3) {
 		weekDay = "Thursday"
-	} else if(day.getDay() == 5) {
+	} else if(today.getDay() == 4) {
 		weekDay = "Friday"
-	} else if(day.getDay() == 6) {
+	} else if(today.getDay() == 5) {
 		weekDay = "Saturday"
 	}
 
-	var month;
-	//month if's
-	if(day.getMonth() == 0) {
-		month = "January"
-	} else if(day.getMonth() == 1) {
-		month = "February"
-	} else if(day.getMonth() == 2) {
-		month = "March"
-	} else if(day.getMonth() == 3) {
-		month = "April"
-	} else if(day.getMonth() == 4) {
-		month = "May"
-	} else if(day.getMonth() == 5) {
-		month = "June"
-	} else if(day.getMonth() == 6) {
-		month = "July"
-	} else if(day.getMonth() == 7) {
-		month = "August"
-	} else if(day.getMonth() == 8) {
-		month = "September"
-	} else if(day.getMonth() == 9) {
-		month = "October"
-	} else if(day.getMonth() == 10) {
-		month = "November"
-	} else if(day.getMonth() == 11) {
-		month = "December"
-	}
-
-
-
 	document.getElementById("dayOfWeek").innerHTML = weekDay + "";
-	document.getElementById("date").innerHTML = monthToString(day.getMonth()) + " " + day.getDate() + ", " + day.getFullYear();
+	document.getElementById("date").innerHTML = monthToString(today.getMonth()) + " " + today.getDate() + ", " + today.getFullYear();
 
 }
 
