@@ -1,5 +1,3 @@
-var day = new Date();
-
 function removeExistingEvents() {
 	var elementsToRemove = document.getElementsByClassName("eventDisplay");
 

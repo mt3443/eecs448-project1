@@ -6,32 +6,35 @@ Last Updated : 09 12 17
 ==============================
 */
 
+function showAvailabilityCreation() {
+	document.getElementById("availabilityCreation").style.display = "block";
+	document.getElementById("availabilityCreationButton").style.display = "none";
+}
+
+function hideAvailabilityCreation() {
+	document.getElementById("availabilityCreation").style.display = "none";
+	document.getElementById("availabilityCreationButton").style.display = "block";
+}
+
+function constructAvailability() {
+	//get selected events
+}
 
 function showEventDetails(input) { //input is time slot that we want the details to show up in, the time slot where the button was pressed
+
 	var selectedTime = document.getElementsByClassName("t_block")[input[2]];
 	
 	var selectedEvent;
-	
+		
 	for(var i = 0; i < selectedTime.childNodes.length; i++) {
 		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " Details") {
 			selectedEvent = selectedTime.childNodes[i];
 			break;
 		}
 	}
-	
+	//CHANGE SHOW DETAILS BUTTON THAT WAS CLICKED TO HIDE DETAILS
 	selectedEvent.lastElementChild.style.display = "block";
 	
-	console.log(input);
-}
-
-function addToCanAttend(input) {
-	eventsArray[input].canAttend.push(document.getElementById("rsvpTextbox").value);
-	saveEventsArray();
-}
-
-function addToCannotAttend(input) {
-	eventsArray[input].cannotAttend.push(document.getElementById("rsvpTextbox").value);
-	saveEventsArray();
 }
 
 function fillEventDetails(input) {
@@ -58,8 +61,6 @@ function fillEventDetails(input) {
 	for(var i = 0; i < eventsArray[input].cannotAttend.length; i++) {
 		divs += '<div class="cannotAttendName">' + eventsArray[input].cannotAttend[i] + '</div>';
 	}
-	
-	divs += '<br><input type="text" id="rsvpTextbox" placeholder="Enter your name"></input><button onclick="addToCanAttend(' + input + ')">I can attend</button><button onclick="addToCannotAttend(' + input + ')">I cannot attend</button>';
 	
 	return divs += '<br><br>';
 }
