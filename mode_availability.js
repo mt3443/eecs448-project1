@@ -64,6 +64,7 @@ function fillEventDetails(input) {
 	for(var i = 0; i < eventsArray[input].cannotAttend.length; i++) {
 		divs += '<div class="cannotAttendName">' + eventsArray[input].cannotAttend[i] + '</div>';
 	}
+	divs += '<button onclick="javascript:window.location.reload()">Cancel</button>';
 
 	return divs += '<br><br>';
 }
@@ -73,17 +74,15 @@ function displayEvents() {
 	var selectedDate = document.getElementById("date").innerHTML;
 
 	for(var i = 0; i < eventsArray.length; i++) { //run through every event
-		if(eventsArray[i].date == selectedDate) { //if an event happens today
+		if(eventsArray[i].date == selectedDate) {   //if an event happens today
 			for(var j = 0; j < eventsArray[i].times.length; j++) { //run through the times that event is occuring
 				for(var k = 0; k < document.getElementsByClassName("time").length; k++) {
 					if(document.getElementsByClassName("time")[k].innerHTML == eventsArray[i].times[j] || document.getElementsByClassName("time")[k].innerHTML == to24hour(eventsArray[i].times[j])) {
-						var color = eventsArray[i].getColor;		// FIX THIS
-						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + color + '" class="eventDisplay">' + eventsArray[i].title + ' ' +
-						'<button onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display: none;">' + fillEventDetails(i) + '</div></div>';
+						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="color:#eee;background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' +
+						'<button onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i) + '</div></div>';
 					}
 				}
 			}
 		}
 	}
-
 }

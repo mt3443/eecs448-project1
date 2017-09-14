@@ -9,18 +9,11 @@ var eventsArray;
 var day = new Date();
 var cal = new Calendar();
 // Event Object
-function Event(host, name, date, times, canAttend, cannotAttend) {
+function Event(host, name, newColor, date, times, canAttend, cannotAttend) {
 	this.host = host;
 	this.name = name;
 	this.title = this.name + ', hosted by ' + this.host;
-	this.color = function() {
-		var letters = '0123456789ABCDEF';
-	  var color = '#';
-	  for (var i = 0; i < 6; i++) {
-	    color += letters[Math.floor(Math.random() * 16)];
-	  }
-	  return color; // Returns in form #000000 - #FFFFFF
-	};
+	this.color = newColor;
 	this.date = date;
 	this.times = times; //array of times
 	this.canAttend = canAttend; //array of the names of people that can attend
@@ -51,7 +44,7 @@ function constructEvent() {
 		alert("Please select at least 1 time block for your event");
 	} else {
 		var tempDate = document.getElementById("date").innerHTML;
-		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, tempDate, getSelectedTimes(), [host.value], []);
+		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes(), [host.value], []);
 		eventsArray.push(tempEvent);
 		saveEventsArray();
 		hideEventCreation();
