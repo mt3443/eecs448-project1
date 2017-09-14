@@ -92,7 +92,8 @@ body {
 
 .eventDisplay {
   display:block;
-  min-height:25px;
+  min-height:30px;
+  padding:0.5em;
 }
 
 button:hover {
@@ -199,9 +200,9 @@ button:hover {
 #Calendar {
   cursor:default;
   position:absolute;
-  min-height: 300px;
+  min-height:300px;
   left:0.5em;
-  bottom:2.5em;
+  bottom:1.5em;
   text-align:left;
 }
 

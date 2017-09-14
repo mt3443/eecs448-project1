@@ -177,15 +177,23 @@ function drawDays(month_num, number_of_days, weekday) {
 		var wrapper = document.getElementById('Calendar');
 		for(var i = 0; i < number_of_days; i++) {
 			if(i === 0) {
-				var margin_left = (weekday + 1) * 26;
+        if(weekday === 7) {
+          var margin_left = 0;
+        }else {
+          var margin_left = (weekday) * 26;
+        }
         if (day.getDate() === i+1 && day.getMonth() === month_num) {  // Hightlights today's cell in calendar
           wrapper.innerHTML += '<div style="background-color:lightblue; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
         }else{
           wrapper.innerHTML += '<div style="background-color:white; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
         }
 		  }else {
-        if (day.getDate()===i+1 && day.getMonth() === month_num) {  // Hightlights today's cell in calendar
-          wrapper.innerHTML += '<div class="day" style="background-color:lightblue;color:white;">' + (i + 1) + '</div>';
+        if (day.getDate() === i + 1) {  // Hightlights today's cell in calendar
+          if(day.getMonth() === month_num) {
+            wrapper.innerHTML += '<div class="day" style="background-color:lightblue;color:white;">' + (i + 1) + '</div>';
+          }else {
+            wrapper.innerHTML += '<div class="day" style="background-color:orange;color:white;">' + (i + 1) + '</div>';
+          }
         }else{
           wrapper.innerHTML += '<div class="day" style="background-color:white;">' + (i + 1) + '</div>';
         }
