@@ -234,3 +234,9 @@ button:hover {
   height:20px;
   border:1px solid #02779E;
 }
+
+.eventDisplay {
+  color:#eee;
+  text-align:left;
+  padding:1em;
+}
