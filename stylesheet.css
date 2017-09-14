@@ -4,11 +4,13 @@ Filename     : stylesheet.css
 Authored by  : team "Team"
 Last Updated : 09 12 17
 ==============================
+notes:
+  Blue - #02779E
 */
 body {
   font-size:18px;
   font-family:sans-serif;
-  color:#333;
+  color:#02779E;
 }
 
 .wrapper {
@@ -35,12 +37,12 @@ body {
   height:auto;
   padding-bottom:0.5em;
   width:330px;
-  background-color:rgba(255,255,255,0.5);
+  background-color:rgba(255,255,255,0.9);
   grid-area:date_header;
 }
 
 .dayname, .date_text {
-  color:#333;
+  color:#02779E;
   text-align:right;
   font-size:28px;
   padding:0.6em 0.6em 0 0;
@@ -58,12 +60,12 @@ body {
   min-height:100%;
   padding:0;
   grid-area:date_view;
-  box-shadow:1px 1px 10px -3px #000;
+  box-shadow:0px 0px 10px 0px #999;
 }
 
 .t_block:first-of-type {
-  border-top:1px solid #000;
-  border-bottom:1px solid #000;
+  border-top:1px solid #02779E;
+  border-bottom:1px solid #02779E;
 }
 
 .t_block {
@@ -74,9 +76,9 @@ body {
   margin:0;
   padding:0;
   border-bottom:1px solid #333;
-  border-left:1px solid #333;
-  border-right:1px solid #333;
-  background-color:#eee;
+  border-left:1px solid #02779E;
+  border-right:1px solid #02779E;
+  background-color:#f4f4f4;
   text-align:center;
 }
 
@@ -116,15 +118,15 @@ button:hover {
 
 .btn:hover {
   cursor:pointer;
-  color:lightblue;
+  color:#02779E;
   transition:0.4s;
 }
 
 .btn_content {
   display:block;
   float:right;
-  background-color:lightblue;
-  color:#333;
+  background-color:#f4f4f4;
+  color:#02779E;
   border-radius:15px;
   padding:0.5em;
   margin-right:20px;
@@ -132,20 +134,20 @@ button:hover {
 
 .btn_content:hover {
   cursor:pointer;
-  background-color:#333;
-  color:#fff;
+  background-color:#02779E;
+  color:#f4f4f4;
   transition:0.4s;
 }
 
 .fa:hover {
   cursor:pointer;
-  color:lightblue;
+  color:#f4f4f4;
   transition:0.4s;
 }
 
 .settings:hover {
   cursor:pointer;
-  color:lightblue;
+  color:#f4f4f4;
   transition:0.4s;
 }
 
@@ -167,7 +169,7 @@ button:hover {
 
 .options_toolbar > div:first-child:hover {
   cursor:pointer;
-  color:lightblue;
+  color:#999;
   transition:0.4s;
 }
 
@@ -177,19 +179,20 @@ button:hover {
   width:150px;
   margin-left:34%;
   margin-bottom:10px;
-  background-color:lightblue;
-  color:#fff;
+  background-color:#333;
+  color:#f4f4f4;
   border-radius:15px;
 }
 
 .btn_attend:hover {
-  background-color:#333;
-  color:#fff;
+  background-color:#02779E;
+  color:#f4f4f4;
   transition:0.4s;
 }
 
 #navbar {
-  left:-300px;
+  width:340px;
+  left:-340px;
   transition:0.4s;
   z-index:2;
 }
@@ -229,5 +232,11 @@ button:hover {
   padding:2px;
   width:20px;
   height:20px;
-  border:1px solid #333;
+  border:1px solid #02779E;
+}
+
+.eventDisplay {
+  color:#eee;
+  text-align:left;
+  padding:1em;
 }

@@ -49,6 +49,7 @@ function fillEventDetails(input) {
 		divs += '<div class="attendeeName">' + eventsArray[input].canAttend[i] + '</div>';
 	}
 
+
 	divs += '<br><button onclick="javascript:window.location.reload()">Cancel</button>';
 
 	return divs += '<br>';
@@ -63,8 +64,8 @@ function displayEvents() {
 			for(var j = 0; j < eventsArray[i].times.length; j++) { //run through the times that event is occuring
 				for(var k = 0; k < document.getElementsByClassName("time").length; k++) {
 					if(document.getElementsByClassName("time")[k].innerHTML == eventsArray[i].times[j] || document.getElementsByClassName("time")[k].innerHTML == to24hour(eventsArray[i].times[j])) {
-						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="color:#eee;background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' +
-						'<button onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i) + '</div></div>';
+						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' +
+						'<button class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i) + '</div></div>';
 					}
 				}
 			}
