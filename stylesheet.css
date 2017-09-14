@@ -92,8 +92,8 @@ body {
 
 .eventDisplay {
   display:block;
-  height:25px;
-  background-color:red;
+  /*height:25px;*/
+  background-color:#85aff2;
 }
 
 button:hover {

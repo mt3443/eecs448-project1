@@ -12,7 +12,7 @@ function monthForward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
 	var month_next = monthToString(day.getMonth() + 1);
-  cal[month_next].draw();
+	cal[month_next].draw();
 	day.setMonth(day.getMonth() + 1);
 	updateTime();
 	removeExistingEvents();
@@ -23,7 +23,7 @@ function monthBackward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
 	var month_prev = monthToString(day.getMonth() + 1);
-  cal[month_prev].draw();
+	cal[month_prev].draw();
 	day.setMonth(day.getMonth() - 1);
 	updateTime();
 	removeExistingEvents();

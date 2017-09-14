@@ -12,6 +12,7 @@ var cal = new Calendar();
 function Event(host, name, date, times, canAttend, cannotAttend) {
 	this.host = host;
 	this.name = name;
+	this.title = this.name + ', hosted by ' + this.host;
 	this.color = function() {
 		var letters = '0123456789ABCDEF';
 	  var color = '#';
