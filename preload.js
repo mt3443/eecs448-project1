@@ -81,11 +81,11 @@ function toggle_navbar() {
 // Toggles the selected behavior of each timeslot
 function toggle_timeAdd(index) {
   if(!time_selections[index].selected) {
-    document.getElementsByClassName('t_block')[index].style.backgroundColor = "palegreen";
+    document.getElementsByClassName('t_block')[index].style.backgroundColor = "orange";
     document.getElementsByClassName('time')[index].style.color = "#333";
     time_selections[index].selected = true;
   }else {
-    document.getElementsByClassName('t_block')[index].style.backgroundColor = "#ffffff";
+    document.getElementsByClassName('t_block')[index].style.backgroundColor = "#eee";
     document.getElementsByClassName('time')[index].style.color = "#333";
     time_selections[index].selected = false;
   }
