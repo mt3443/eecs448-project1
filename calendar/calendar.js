@@ -155,15 +155,15 @@ function drawDays(number_of_days, weekday) {
 			if(i === 0) {
 				var margin_left = (weekday + 1) * 26;
         if (day.getDate()===i+1) {  // Hightlights today's cell in calendar
-          wrapper.innerHTML += '<div style="background-color:#lightblue; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
+          wrapper.innerHTML += '<div style="background-color:lightblue; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
         }else{
-          wrapper.innerHTML += '<div style="background-color:#white; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
+          wrapper.innerHTML += '<div style="background-color:white; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
         }
 		}else {
         if (day.getDate()===i+1) {  // Hightlights today's cell in calendar
           wrapper.innerHTML += '<div class="day" style="background-color:lightblue;">' + (i + 1) + '</div>';
         }else{
-          wrapper.innerHTML += '<div class="day" style="background-color:#white;">' + (i + 1) + '</div>';
+          wrapper.innerHTML += '<div class="day" style="background-color:white;">' + (i + 1) + '</div>';
         }
 			}
 		}
