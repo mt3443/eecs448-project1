@@ -9,11 +9,14 @@ Last Updated : 09 12 17
 function showAvailabilityCreation() {
 	document.getElementById("availabilityCreation").style.display = "block";
 	document.getElementById("availabilityCreationButton").style.display = "none";
+	document.getElementById("eventCreationButton").style.display = "none";
 }
 
 function hideAvailabilityCreation() {
 	document.getElementById("availabilityCreation").style.display = "none";
 	document.getElementById("availabilityCreationButton").style.display = "block";
+	document.getElementById("eventCreationButton").style.display = "block";
+
 }
 
 function constructAvailability() {

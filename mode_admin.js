@@ -36,11 +36,14 @@ if(localStorage.getItem("eventsArray") != null) {
 function showEventCreation() {
 	document.getElementById("eventCreation").style.display = "block";
 	document.getElementById("eventCreationButton").style.display = "none";
+	document.getElementById("availabilityCreationButton").style.display = "none";
 }
 
 function hideEventCreation() {
 	document.getElementById("eventCreation").style.display = "none";
 	document.getElementById("eventCreationButton").style.display = "block";
+	document.getElementById("availabilityCreationButton").style.display = "block";
+
 }
 
 function constructEvent() {

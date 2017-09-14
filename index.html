@@ -48,27 +48,26 @@
       <center>
       <div id="eventCreation" style="display:none;margin:1em;">
         New Event
-      <input style="display:block;line-height:24px;width:150px;margin-top:10px;" type="text" id="host" placeholder="Enter your name"></input>
-      <input style="display:block;line-height:24px;width:150px;margin-top:10px;" type="text" id="name" placeholder="Enter event name"></input>
+        <input style="display:block;line-height:24px;width:150px;margin-top:10px;" type="text" id="host" placeholder="Enter your name"></input>
+        <input style="display:block;line-height:24px;width:150px;margin-top:10px;" type="text" id="name" placeholder="Enter event name"></input>
 
-      <div class="btn" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:constructEvent();"><i class="fa fa-plus"></i> Create Event</div>
-      <div class="btn" style="width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:hideEventCreation();">Cancel</div>
+        <div class="btn" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:constructEvent();"><i class="fa fa-plus"></i> Create Event</div>
+        <div class="btn" style="width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:hideEventCreation();">Cancel</div>
 
       </div>
       </center>
-	  
-      <div class="btn_content" id="eventCreationButton" onclick="javascript:showEventCreation();">Add An Event</div>
-		
-	  <div id="availabilityCreation" style="display:none;margin:1em;">
-		Add Your Availability
-	  <input style="display:block;line-height:24px;width:150px;margin-top:10px;" type="text" id="attendee" placeholder="Enter your name"></input>
-	  
-	  <div class="btn" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:constructAvailability();"><i class="fa fa-plus"></i> Add Availability</div>
-	  <div class="btn" style="width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:hideAvailabilityCreation();">Cancel</div> <!-- KADEN FIX ME -->
-	  </div>
-	  
-	   <div class="btn_content" id="availabilityCreationButton" onclick="javascript:showAvailabilityCreation();">Add Your Availability</div>
-	  
+
+      <div class="btn_content" style="margin-top:10px;" id="eventCreationButton" onclick="javascript:showEventCreation();">Add An Event</div>
+      <center>
+	    <div id="availabilityCreation" style="display:none;margin:1em;">
+		    Add Your Availability
+	      <input style="display:block;line-height:24px;width:150px;margin-top:10px;" type="text" id="attendee" placeholder="Enter your name"></input>
+
+	      <div class="btn" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:constructAvailability();"><i class="fa fa-plus"></i> Add Availability</div>
+	      <div class="btn" style="width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:hideAvailabilityCreation();">Cancel</div> <!-- KADEN FIX ME -->
+	    </div>
+      </center>
+	    <div class="btn_content" style="margin-top:10px;" id="availabilityCreationButton" onclick="javascript:showAvailabilityCreation();">Add Your Availability</div>
     </span>
 
     <div class="date_view">
