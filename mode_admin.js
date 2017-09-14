@@ -54,21 +54,12 @@ function constructEvent() {
 		hideEventCreation();
 		resetSelectedTimes();
 	}
-
-	//document.getElementById("result").innerHTML = "make another event, close window, reopen, repeat";
 }
 
 function saveEventsArray() {
-
 	localStorage.setItem("eventsArray", JSON.stringify(eventsArray));
-
-	//document.getElementById("savedInformation").innerHTML = JSON.stringify(eventsArray); //remove in final
 }
 
 function loadEventsArray() {
-
 	eventsArray = JSON.parse(localStorage.getItem("eventsArray"));
-
-	//document.getElementById("savedInformation").innerHTML = JSON.stringify(eventsArray); //remove in final
-
 }

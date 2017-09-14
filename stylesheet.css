@@ -170,6 +170,23 @@ button:hover {
   transition:0.4s;
 }
 
+.btn_attend {
+  display:block;
+  padding:0.5em;
+  width:150px;
+  margin-left:34%;
+  margin-bottom:10px;
+  background-color:lightblue;
+  color:#fff;
+  border-radius:15px;
+}
+
+.btn_attend:hover {
+  background-color:#333;
+  color:#fff;
+  transition:0.4s;
+}
+
 #navbar {
   left:-300px;
   transition:0.4s;
@@ -183,6 +200,7 @@ button:hover {
 #Calendar {
   cursor:default;
   position:absolute;
+  min-height: 300px;
   left:0.5em;
   bottom:2.5em;
   text-align:left;
