@@ -9,58 +9,60 @@ Last Updated : 09 12 17
 
 function showEventDetails(input) { //input is time slot that we want the details to show up in, the time slot where the button was pressed
 	var selectedTime = document.getElementsByClassName("t_block")[input[2]];
-	
+
 	var selectedEvent;
-	
+
 	for(var i = 0; i < selectedTime.childNodes.length; i++) {
 		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " Details") {
 			selectedEvent = selectedTime.childNodes[i];
 			break;
 		}
 	}
-	
+
 	selectedEvent.lastElementChild.style.display = "block";
-	
+
 	console.log(input);
 }
 
 function addToCanAttend(input) {
 	eventsArray[input].canAttend.push(document.getElementById("rsvpTextbox").value);
 	saveEventsArray();
+	window.location.reload();
 }
 
 function addToCannotAttend(input) {
 	eventsArray[input].cannotAttend.push(document.getElementById("rsvpTextbox").value);
 	saveEventsArray();
+	window.location.reload();
 }
 
 function fillEventDetails(input) {
 	var divs = '<br><div class="attending">' + eventsArray[input].canAttend.length;
-	
+
 	if(eventsArray[input].canAttend.length == 1) {
 		divs += ' person is attending: </div>';
 	} else {
 		divs += ' people are attending: </div>'
 	}
-	
+
 	for(var i = 0; i < eventsArray[input].canAttend.length; i++) {
 		divs += '<div class="attendeeName">' + eventsArray[input].canAttend[i] + '</div>';
 	}
-	
+
 	divs += '<br><div class="notAttending">' + eventsArray[input].cannotAttend.length;
-	
+
 	if(eventsArray[input].cannotAttend.length == 1) {
 		divs += ' person is not attending: </div>';
 	} else {
 		divs += ' people are not attending: </div>';
 	}
-	
+
 	for(var i = 0; i < eventsArray[input].cannotAttend.length; i++) {
 		divs += '<div class="cannotAttendName">' + eventsArray[input].cannotAttend[i] + '</div>';
 	}
-	
-	divs += '<br><input type="text" id="rsvpTextbox" placeholder="Enter your name"></input><button onclick="addToCanAttend(' + input + ')">I can attend</button><button onclick="addToCannotAttend(' + input + ')">I cannot attend</button>';
-	
+
+	divs += '<input style="display:block;height:24px;width:150px;margin:0.5em;margin-left:35%;" type="text" id="rsvpTextbox" placeholder="Enter your name"></input><div class="btn_attend" style="color:green;" onclick="addToCanAttend(' + input + ')">I can attend</div><div class="btn_attend" style="color:red;" onclick="addToCannotAttend(' + input + ')">I cannot attend</div><div class="btn" onclick="javascript:window.location.reload();">cancel</div>';
+
 	return divs += '<br><br>';
 }
 

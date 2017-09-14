@@ -1,11 +1,23 @@
 var days_of_the_week = '<div class="days_of_the_week">Su</div><div class="days_of_the_week">M</div><div class="days_of_the_week">T</div><div class="days_of_the_week">W</div><div class="days_of_the_week">T</div><div class="days_of_the_week">F</div><div class="days_of_the_week">S</div>';
 
 function Calendar() {
-var d = new Date(2017, 1, 1);
+var january = new Date(2017, 0, 0);
+var february = new Date(2017, 1, 0);
+var march = new Date(2017, 2, 0);
+var april = new Date(2017, 3, 0);
+var may = new Date(2017, 4, 0);
+var june = new Date(2017, 5, 0);
+var july = new Date(2017, 6, 0);
+var august = new Date(2017, 7, 0);
+var september = new Date(2017, 8, 0);
+var october = new Date(2017, 9, 0);
+var november = new Date(2017, 10, 0);
+var december = new Date(2017, 11, 0);
+
   this.year = day.getFullYear();
 
   this.January = {
-		weekday: (d.getDay() + 1),
+		weekday: (january.getDay() + 1),
     number_of_days: 31,
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -17,7 +29,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.February = {
-		weekday: (d.getDay() + 1),
+		weekday: (february.getDay() + 1),
     number_of_days: checkLeapYear(),
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -29,7 +41,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.March = {
-		weekday: (d.getDay() + 1),
+		weekday: (march.getDay() + 1),
     number_of_days: 31,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -41,7 +53,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.April = {
-		weekday: (d.getDay() + 1),
+		weekday: (april.getDay() + 1),
     number_of_days: 30,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -53,7 +65,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.May = {
-		weekday: (d.getDay() + 1),
+		weekday: (may.getDay() + 1),
     number_of_days: 31,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -65,7 +77,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.June = {
-		weekday: (d.getDay() + 1),
+		weekday: (june.getDay() + 1),
     number_of_days: 30,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -77,7 +89,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.July = {
-		weekday: (d.getDay() + 1),
+		weekday: (july.getDay() + 1),
     number_of_days: 31,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -89,7 +101,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.August = {
-		weekday: (d.getDay() + 1),
+		weekday: (august.getDay() + 1),
     number_of_days: 31,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -101,7 +113,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.September = {
-		weekday: (d.getDay() + 1),
+		weekday: (september.getDay() + 1),
     number_of_days: 30,
 		draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -113,7 +125,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.October = {
-		weekday: (d.getDay() + 1),
+		weekday: (october.getDay() + 1),
     number_of_days: 31,
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -125,7 +137,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.November = {
-		weekday: (d.getDay() + 1),
+		weekday: (november.getDay() + 1),
     number_of_days: 30,
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -137,7 +149,7 @@ var d = new Date(2017, 1, 1);
   };
 
   this.December = {
-		weekday: (d.getDay() + 1),
+		weekday: (december.getDay() + 1),
     number_of_days: 31,
     draw: function() {
 			var wrapper = document.getElementById('Calendar');
@@ -153,20 +165,13 @@ function drawDays(number_of_days, weekday) {
 		var wrapper = document.getElementById('Calendar');
 		for(var i = 0; i < number_of_days; i++) {
 			if(i === 0) {
-				var margin_left = (weekday + 1) * 26;
-        if (1===1) {  // FIX with d===day or something that works
-          wrapper.innerHTML += '<div style="background-color:#ffffff; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
-        }else{
-          wrapper.innerHTML += '<div style="background-color:#cccccc; margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
-        }
-		}else {
-        if (1===1) {  // FIX with d===day or something that works
-          wrapper.innerHTML += '<div class="day" style="background-color:#ffffff;">' + (i + 1) + '</div>';
-        }else{
-          wrapper.innerHTML += '<div class="day" style="background-color:#cccccc;">' + (i + 1) + '</div>';
-        }
-			}
-		}
+				var margin_left = 0;
+        margin_left = (weekday) * 26;
+          wrapper.innerHTML += '<div style="background-color:#fff;margin-left:' + margin_left + 'px;" class="day">' + (i + 1) + '</div>';
+		  }else {
+          wrapper.innerHTML += '<div class="day" style="background-color:#fff;">' + (i + 1) + '</div>';
+		  }
+	  }
     // console.log(d);
 		return;
 }
