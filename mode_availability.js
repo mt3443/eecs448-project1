@@ -19,10 +19,6 @@ function hideAvailabilityCreation() {
 
 }
 
-function constructAvailability() {
-	//get selected events
-}
-
 function showEventDetails(input) { //input is time slot that we want the details to show up in, the time slot where the button was pressed
 
 	var selectedTime = document.getElementsByClassName("t_block")[input[2]];
@@ -53,20 +49,9 @@ function fillEventDetails(input) {
 		divs += '<div class="attendeeName">' + eventsArray[input].canAttend[i] + '</div>';
 	}
 
-	divs += '<br><div class="notAttending">' + eventsArray[input].cannotAttend.length;
+	divs += '<br><button onclick="javascript:window.location.reload()">Cancel</button>';
 
-	if(eventsArray[input].cannotAttend.length == 1) {
-		divs += ' person is not attending: </div>';
-	} else {
-		divs += ' people are not attending: </div>';
-	}
-
-	for(var i = 0; i < eventsArray[input].cannotAttend.length; i++) {
-		divs += '<div class="cannotAttendName">' + eventsArray[input].cannotAttend[i] + '</div>';
-	}
-	divs += '<button onclick="javascript:window.location.reload()">Cancel</button>';
-
-	return divs += '<br><br>';
+	return divs += '<br>';
 }
 
 function displayEvents() {
