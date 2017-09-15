@@ -111,11 +111,3 @@ function resetSelectedTimes() {
   }
   window.location.reload();
 }
-
-function isEventsArrayEmpty() {
-  var eventsArrayIsEmpty = true;
-  if (eventsArray.length !== 0) {
-    eventsArrayIsEmpty = false;
-  }
-  return eventsArrayIsEmpty;
-}

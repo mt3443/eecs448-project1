@@ -81,6 +81,14 @@ function loadEventsArray() {
 	eventsArray = JSON.parse(localStorage.getItem("eventsArray"));
 }
 
+function isEventsArrayEmpty() {
+  var eventsArrayIsEmpty = true;
+  if (eventsArray.length !== 0) {
+    eventsArrayIsEmpty = false;
+  }
+  return eventsArrayIsEmpty;
+}
+
 function clearEventsArray() {
 	localStorage.removeItem("eventsArray");
 }
