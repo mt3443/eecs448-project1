@@ -5,7 +5,7 @@ Authored by  : team "Team"
 Last Updated : 09 12 17
 ==============================
 */
-var eventsArray;
+//var eventsArray = new JSONArray();
 var today = new Date();
 var day = new Date();
 var cal = new Calendar();
@@ -34,7 +34,7 @@ function Event(host, name, newColor, date, times) {
 if(localStorage.getItem("eventsArray") != null) {
 	loadEventsArray();
 } else {
-	eventsArray = [];
+	var eventsArray = [];
 }
 
 function showEventCreation() {
@@ -79,4 +79,8 @@ function saveEventsArray() {
 
 function loadEventsArray() {
 	eventsArray = JSON.parse(localStorage.getItem("eventsArray"));
+}
+
+function clearEventsArray() {
+	localStorage.removeItem("eventsArray");
 }
