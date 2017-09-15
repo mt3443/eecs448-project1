@@ -44,6 +44,7 @@ function constructEvent() {
 		alert("Please select at least 1 time block for your event");
 	} else {
 		var tempDate = document.getElementById("date").innerHTML;
+		
 		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes(), [host.value]);
 		eventsArray.push(tempEvent);
 		saveEventsArray();

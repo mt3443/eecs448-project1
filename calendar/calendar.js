@@ -17,7 +17,7 @@ var december = new Date(2017, 11, 0);
   this.year = day.getFullYear();
 
   this.January = {
-		weekday: (january.getDay() + 1),
+		weekday: (january.getDay()),
     month_num: 0,
     number_of_days: 31,
     draw: function() {
@@ -30,7 +30,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.February = {
-		weekday: (february.getDay() + 1),
+		weekday: (february.getDay()),
     month_num: 1,
     number_of_days: checkLeapYear(),
 		draw: function() {
@@ -43,7 +43,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.March = {
-		weekday: (march.getDay() + 1),
+		weekday: (march.getDay()),
     month_num: 2,
     number_of_days: 31,
 		draw: function() {
@@ -56,7 +56,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.April = {
-		weekday: (april.getDay() + 1),
+		weekday: (april.getDay()),
     month_num: 3,
     number_of_days: 30,
 		draw: function() {
@@ -69,7 +69,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.May = {
-		weekday: (may.getDay() + 1),
+		weekday: (may.getDay()),
     month_num: 4,
     number_of_days: 31,
 		draw: function() {
@@ -82,7 +82,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.June = {
-		weekday: (june.getDay() + 1),
+		weekday: (june.getDay()),
     month_num: 5,
     number_of_days: 30,
 		draw: function() {
@@ -95,7 +95,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.July = {
-		weekday: (july.getDay() + 1),
+		weekday: (july.getDay()),
     month_num: 6,
     number_of_days: 31,
 		draw: function() {
@@ -108,7 +108,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.August = {
-		weekday: (august.getDay() + 1),
+		weekday: (august.getDay()),
     month_num: 7,
     number_of_days: 31,
 		draw: function() {
@@ -121,7 +121,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.September = {
-		weekday: (september.getDay() + 1),
+		weekday: (september.getDay()),
     month_num: 8,
     number_of_days: 30,
 		draw: function() {
@@ -134,7 +134,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.October = {
-		weekday: (october.getDay() + 1),
+		weekday: (october.getDay()),
     month_num: 9,
     number_of_days: 31,
     draw: function() {
@@ -147,7 +147,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.November = {
-		weekday: (november.getDay() + 1),
+		weekday: (november.getDay()),
     month_num: 10,
     number_of_days: 30,
     draw: function() {
@@ -160,7 +160,7 @@ var december = new Date(2017, 11, 0);
   };
 
   this.December = {
-		weekday: (december.getDay() + 1),
+		weekday: (december.getDay()),
     month_num: 11,
     number_of_days: 31,
     draw: function() {
