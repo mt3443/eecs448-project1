@@ -6,7 +6,7 @@ Last Updated : 09 12 17
 ==============================
 */
 //var eventsArray = new JSONArray();
-var today = new Date();
+//var today = new Date();
 var day = new Date();
 var cal = new Calendar();
 // Event Object

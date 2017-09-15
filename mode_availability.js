@@ -6,7 +6,7 @@ Last Updated : 09 12 17
 ==============================
 */
 
-var attendButtonText = 'I can attend this event at this time (fix phrasing)';
+var attendButtonText = 'I can attend at this time';
 
 function showAvailabilityCreation() {
 	document.getElementById("availabilityCreation").style.display = "block";

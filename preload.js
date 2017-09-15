@@ -7,8 +7,8 @@ Last Updated : 09 12 17
 */
 // Initialize timeslots and display previously made event
 window.onload = function() {
-  var month_current = monthToString(today.getMonth());
-  cal[month_current].draw();
+  var month_current = monthToString(day.getMonth());
+  cal.draw();
   time_selections = [];
   var table_hours = ['12', '12', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '10', '10', '11', '11'];
   var date_view = document.getElementsByClassName('date_view')[0];
