@@ -13,11 +13,11 @@ var cal = new Calendar();
 
 function createCanAttend(host, times) {
 	var tempCanAttend = {};
-	
+
 	for(var i = 0; i < times.length; i++) {
 		tempCanAttend[times[i]] = [host];
 	}
-	
+
 	return tempCanAttend;
 }
 
@@ -50,17 +50,26 @@ function hideEventCreation() {
 
 }
 
+function constructEventChe() {
+
+}
+
 function constructEvent() {
 	if(getSelectedTimes().length == 0) {
 		alert("Please select at least 1 time block for your event");
 	} else {
-		var tempDate = document.getElementById("date").innerHTML;
-		
-		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
-		eventsArray.push(tempEvent);
-		saveEventsArray();
-		hideEventCreation();
-		resetSelectedTimes();
+			if(today < day) {
+						alert("You are creating an event in a past");
+						resetSelectedTimes();
+			} else {
+				var tempDate = document.getElementById("date").innerHTML;
+
+				var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
+				eventsArray.push(tempEvent);
+				saveEventsArray();
+				hideEventCreation();
+				resetSelectedTimes();
+			}
 	}
 }
 
