@@ -55,19 +55,19 @@ function updateTime()
 
 	var weekDay;
 	//day of the week if's
-	if(today.getDay() == 6) {
+	if(today.getDay() == 0) {
 		weekDay = "Sunday"
-	} else if(today.getDay() == 0) {
-		weekDay = "Monday"
 	} else if(today.getDay() == 1) {
-		weekDay = "Tuesday"
+		weekDay = "Monday"
 	} else if(today.getDay() == 2) {
-		weekDay = "Wednesday"
+		weekDay = "Tuesday"
 	} else if(today.getDay() == 3) {
-		weekDay = "Thursday"
+		weekDay = "Wednesday"
 	} else if(today.getDay() == 4) {
-		weekDay = "Friday"
+		weekDay = "Thursday"
 	} else if(today.getDay() == 5) {
+		weekDay = "Friday"
+	} else if(today.getDay() == 6) {
 		weekDay = "Saturday"
 	}
 

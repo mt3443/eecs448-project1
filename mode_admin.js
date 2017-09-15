@@ -10,14 +10,25 @@ var today = new Date();
 var day = new Date();
 var cal = new Calendar();
 // Event Object
-function Event(host, name, newColor, date, times, canAttend) {
+
+function createCanAttend(host, times) {
+	var tempCanAttend = {};
+	
+	for(var i = 0; i < times.length; i++) {
+		tempCanAttend[times[i]] = [host];
+	}
+	
+	return tempCanAttend;
+}
+
+function Event(host, name, newColor, date, times) {
 	this.host = host;
 	this.name = name;
 	this.title = this.name + ', hosted by ' + this.host;
 	this.color = newColor;
 	this.date = date;
 	this.times = times; //array of times
-	this.canAttend = canAttend; //array of the names of people that can attend
+	this.canAttend = createCanAttend(host, times); //array of the names of people that can attend
 }
 
 if(localStorage.getItem("eventsArray") != null) {
@@ -45,7 +56,7 @@ function constructEvent() {
 	} else {
 		var tempDate = document.getElementById("date").innerHTML;
 		
-		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes(), [host.value]);
+		var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
 		eventsArray.push(tempEvent);
 		saveEventsArray();
 		hideEventCreation();
