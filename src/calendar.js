@@ -52,8 +52,10 @@ function drawDays(month_num, number_of_days, weekday) {
 				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; // Unselected cell/day # 1
 			}
 		} else {
-      if (day.getDate() == i) {  // Hightlights today's text in calendar
-				wrapper.innerHTML += '<div class="day" style="background-color:#02779E; color:lightyellow;">' + i + '</div>'; // Selected cell/day except cell # 1
+			if(day.getMonth() == currentMonth && day.getFullYear() == currentYear && today.getDate() == i) {
+				wrapper.innerHTML += '<div class="day" style="background-color:#02779E;color:lightyellow;">' + i + '</div>';
+			} else if(day.getDate() == i) {
+				wrapper.innerHTML += '<div class="day" style="color:orange;">' + i + '</div>';
 			} else {
 				wrapper.innerHTML += '<div class="day" >' + i + '</div>'; // Unselected cells/days except cell # 1
 			}
