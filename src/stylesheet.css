@@ -198,7 +198,7 @@ button:hover {
   cursor:pointer;
   color:#02779E;
   opacity:0.8;
-  transition:0.3s;
+  transition:0.2s;
 }
 
 .options_toolbar > div:nth-child(2):hover {
@@ -235,8 +235,9 @@ button:hover {
 #navbar {
   width:340px;
   left:-340px;
+  display:none;
   background-color:#f4f4f4;
-  transition:0.2s;
+  transition:all 0.7s;
   z-index:2;
 }
 

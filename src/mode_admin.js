@@ -76,7 +76,7 @@ function eventAlreadyExisits() {
 	var tempDate = document.getElementById("date").innerHTML;
 
 	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
-	
+
 	for(var i = 0; i < eventsArray.length; i++) {
 		if(eventsArray[i].title == tempEvent.title) { //if two events have the same title
 			for(var j = 0; j < eventsArray[i].times.length; j++) {
@@ -88,7 +88,7 @@ function eventAlreadyExisits() {
 			}
 		}
 	}
-	
+
 	return false;
 }
 
@@ -150,4 +150,8 @@ function isEventsArrayEmpty() {
 function clearEventsArray() {
 	localStorage.removeItem("eventsArray");
 	window.location.reload();
+}
+
+function hideSelf(index) {
+	document.getElementById('details' + index).style.display = "none";
 }
