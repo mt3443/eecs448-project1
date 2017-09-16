@@ -22,16 +22,17 @@ function hideAvailabilityCreation() {
 }
 
 function fillEventDetails(index, time) {
-	var divs = '<br><div class="attending">' + Object.keys(eventsArray[index].canAttend[time]).length;
+	
+	var divs = '<br><div class="attending">' + Object.keys(eventsArray[index].canAttend[to12hour(time)]).length;
 
-	if(eventsArray[index].canAttend[time].length == 1) {
+	if(eventsArray[index].canAttend[to12hour(time)].length == 1) {
 		divs += ' person is attending: </div>';
 	} else {
 		divs += ' people are attending: </div>'
 	}
 
-	for(var i = 0; i < eventsArray[index].canAttend[time].length; i++) {
-		divs += '<div class="attendeeName">' + eventsArray[index].canAttend[time][i] + '</div>';
+	for(var i = 0; i < eventsArray[index].canAttend[to12hour(time)].length; i++) {
+		divs += '<div class="attendeeName">' + eventsArray[index].canAttend[to12hour(time)][i] + '</div>';
 	}
 
 	divs += '<br><button style="background-color:#f4f4f4;border:none;border-radius:3px;color:#333;" onclick="javascript:window.location.reload()">Collapse All</button>';

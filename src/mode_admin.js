@@ -103,7 +103,6 @@ function displayEvents() {
 			for(var j = 0; j < eventsArray[i].times.length; j++) { //run through the times that event is occuring
 
 				for(var k = 0; k < document.getElementsByClassName("time").length; k++) {
-
 					if(to24hour(document.getElementsByClassName("time")[k].innerHTML) == to24hour(eventsArray[i].times[j])) {
 						time = document.getElementsByClassName("time")[k].innerHTML;
 						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="font-weight:800;background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<br><input type="checkbox" style="margin:25px;line-height:60px;width:auto;" class="attendButton"></input>' + '<div style="display:inline-block;font-weight:300;margin-left:-10px;">' + attendButtonText  +
