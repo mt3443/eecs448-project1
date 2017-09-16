@@ -60,7 +60,7 @@ function constructEvent() {
 			} else {
 				var tempDate = document.getElementById("date").innerHTML;
 
-				var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
+				var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor({luminosity: 'light'}), tempDate, getSelectedTimes());
 				eventsArray.push(tempEvent);
 				saveEventsArray();
 				hideEventCreation();

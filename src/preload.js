@@ -70,12 +70,14 @@ var time_selections = [];
 var toggle = true;
 function toggle_navbar() {
   if(toggle) {
+    document.getElementById('navbar').style.display = "block";
     document.getElementById('navbar').style.left = "0px";
     document.getElementById('navbar').style.boxShadow = "10px 0px 30px 0px #999";
     toggle = false;
   }else {
     document.getElementById('navbar').style.boxShadow = "none";
     document.getElementById('navbar').style.left = "-340px";
+    document.getElementById('navbar').style.display = "none";
     toggle = true;
   }
   return;
