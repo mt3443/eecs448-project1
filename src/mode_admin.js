@@ -84,7 +84,7 @@ function displayEvents() {
 					if(to24hour(document.getElementsByClassName("time")[k].innerHTML) == to24hour(eventsArray[i].times[j])) {
 						time = document.getElementsByClassName("time")[k].innerHTML;
 						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<br><input type="checkbox" class="attendButton">' + attendButtonText + '</input>' +
-						'<button class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
+						'<button id="details'+ i + '" class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + ']);hideSelf(' + i + ');">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
 					}
 				}
 			}
@@ -122,6 +122,10 @@ function isEventsArrayEmpty() {
     eventsArrayIsEmpty = false;
   }
   return eventsArrayIsEmpty;
+}
+
+function hideSelf(index) {
+	document.getElementById('details' + index).style.display = "none";
 }
 
 function clearEventsArray() {
