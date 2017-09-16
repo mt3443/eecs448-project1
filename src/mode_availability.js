@@ -34,26 +34,26 @@ function fillEventDetails(index, time) {
 		divs += '<div class="attendeeName">' + eventsArray[index].canAttend[time][i] + '</div>';
 	}
 
-	divs += '<br><button onclick="javascript:window.location.reload()">Cancel</button>';
+	divs += '<br><button onclick="javascript:window.location.reload()">Close All</button>';
 
 	return divs += '<br>';
 }
 
 function constructAvailability() {
-	
+
 	var currentEvent;
 	var eventTime;
 	var eventTitle
-	
+
 	for(var i = 0; i < document.getElementsByClassName("attendButton").length; i++) {
 		if(document.getElementsByClassName("attendButton")[i].checked) {
 			eventTime = document.getElementsByClassName("attendButton")[i].parentNode.parentNode.childNodes[0].innerHTML;
 			currentEvent = document.getElementsByClassName("attendButton")[i].parentNode; //add name to events canAttend list at that time
 			eventTitle = currentEvent.innerText;
-			
+
 			for(var j = 0; j < eventsArray.length; j++) { //find the event in eventsArray
 				if(eventsArray[j].title == eventTitle.substr(0, eventsArray[j].title.length)) { //match title
-					for(var k = 0; k < eventsArray[j].times.length; k++) { 
+					for(var k = 0; k < eventsArray[j].times.length; k++) {
 						if(eventsArray[j].times[k] == eventTime) { //match time
 							eventsArray[j].canAttend[eventTime].push(document.getElementById("attendee").value);
 						} else if(eventsArray[j].times[k] == to12hour(eventTime)) {
@@ -64,7 +64,7 @@ function constructAvailability() {
 			}
 		}
 	}
-	
+
 	saveEventsArray();
 	window.location.reload();
 }
