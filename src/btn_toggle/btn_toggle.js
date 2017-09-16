@@ -13,6 +13,16 @@ var button_array = []; // This is where our switches are stored
 // @PRE Button Element Must Use 'onclick="javascript:btn_toggle(uniqueIndex, btn_wrapperID, btn_innerID);behavior();"'
 // @PRE behavior() Must Be A Toggle Function
 // In HTML Within The 'btn_wrapper' Div
+
+/**
+ * High level function that controls 12 hour to 24 hour button
+ * @pre Button element must have unique index
+ * @param {number} number number of individual toggles
+ * @param {string} name element id of the div that contains the button in index.html
+ * @param {string} inner_name element id of actual button in index.html
+ * @returns Nothing
+ * @post Button is in toggled state
+ */
 function btn_toggle(number, name, inner_name, /*behavior*/) {
   if(!inButtonArray(number)) {
     // Create a new object to keep track of our individual toggles
@@ -36,6 +46,14 @@ function btn_toggle(number, name, inner_name, /*behavior*/) {
 }
 // @POST Button Has Been Toggled To Inverse State
 // @PRE Follows btn_toggle()
+
+/**
+ * Checks if given number, which represents a button, is in the button array
+ * @pre Button element must have unique ID
+ * @param {number} number representing a button
+ * @returns true if number is in the button array, false if number is not in the button array
+ * @post None
+ */
 function inButtonArray(number) {
   if(button_array.length === 0) {
     return false;
@@ -49,6 +67,14 @@ function inButtonArray(number) {
   return false;
 }
 // @POST Returns Bool Indicating If Button Already Exists In button_array
+
+/**
+ * Function that manipulates css to achieve button toggling animation
+ * @pre None
+ * @param {number} number representing the button that we wish to toggle
+ * @returns Nothing
+ * @post Button animation is played, button is then in the toggled state
+ */
 
 function animateSwitch(number) {
   button_background = button_array[number].element;

@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-/*
-==============================
-Filename     : calendar.js
-Authored by  : team "Team"
-Last Updated : 09 12 17
-==============================
-*/
-||||||| merged common ancestors
-=======
 /*
 ==============================
 Filename     : calendar.js
@@ -15,7 +5,7 @@ Authored by  : team "Team"
 Last Updated : 09 16 17
 ==============================
 */
->>>>>>> e4427785564fcf7e19003c23b067e49ca34fe1c8
+
 var days_of_the_week = '<div class="days_of_the_week">Su</div><div class="days_of_the_week">M</div><div class="days_of_the_week">T</div><div class="days_of_the_week">W</div><div class="days_of_the_week">T</div><div class="days_of_the_week">F</div><div class="days_of_the_week">S</div>';
 
 function Calendar() {
