@@ -83,8 +83,8 @@ function displayEvents() {
 
 					if(to24hour(document.getElementsByClassName("time")[k].innerHTML) == to24hour(eventsArray[i].times[j])) {
 						time = document.getElementsByClassName("time")[k].innerHTML;
-						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<br><input type="checkbox" class="attendButton">' + attendButtonText + '</input>' +
-						'<button id="details'+ i + '" class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + ']);hideSelf(' + i + ');">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
+						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<br><input type="checkbox" style="margin:25px;line-height:60px;width:auto;" class="attendButton"></input>' + attendButtonText  +
+						'<button id="details'+ j + '" class="btn_details" style="float:right;background-color:#f4f4f4;border:none;border-radius:3px;color:#333;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + ']);hideSelf(' + j + ');">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
 					}
 				}
 			}
