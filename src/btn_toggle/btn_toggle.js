@@ -97,7 +97,7 @@ function animateSwitch(number) {
     // Call the behavior function before animating
     // button_array[number].callback;
     // Be sure background-color matches the background color of the content --- ! STYLE
-    button_background.style.backgroundColor = 'white';
+    button_background.style.backgroundColor = '#f4f4f4';
     // Animate the toggle
     button_inner.style.float = 'left';
 

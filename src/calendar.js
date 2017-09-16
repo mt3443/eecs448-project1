@@ -49,7 +49,7 @@ function drawDays(month_num, number_of_days, weekday) {
 			if (day.getDate() == i) { //setup for first day of the month (getting month lined up) 														//NECESSARY LINE
 				wrapper.innerHTML += '<div style="color:orange; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; 						//NECESSARY LINE
 			} else if(day.getDate() == i) { 																											//NECESSARY LINE
-				wrapper.innerHTML += '<div class="day" style="color:orange; margin-left:' + margin_left + 'px;">' + i + '</div>'; 						//NECESSARY LINE
+				wrapper.innerHTML += '<div class="day" style="color:lightcoral; margin-left:' + margin_left + 'px;">' + i + '</div>'; 						//NECESSARY LINE
 			} else { 																																	//NECESSARY LINE
 				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; // Unselected cell/day # 1 			//NECESSARY LINE
 			} 																																			//NECESSARY LINE
@@ -57,7 +57,7 @@ function drawDays(month_num, number_of_days, weekday) {
 			if(day.getMonth() == currentMonth && day.getFullYear() == currentYear && today.getDate() == i) { 											//NECESSARY LINE
 				wrapper.innerHTML += '<div class="day" style="background-color:#02779E;color:lightyellow;">' + i + '</div>';  							//NECESSARY LINE
 			} else if(day.getDate() == i) { 																											//NECESSARY LINE
-				wrapper.innerHTML += '<div class="day" style="color:orange;">' + i + '</div>'; 															//NECESSARY LINE
+				wrapper.innerHTML += '<div class="day" style="color:lightcoral;">' + i + '</div>'; 															//NECESSARY LINE
 			} else { 																																	//NECESSARY LINE
 				wrapper.innerHTML += '<div class="day" >' + i + '</div>'; // Unselected cells/days except cell # 1  									//NECESSARY LINE
 			} 																																			//NECESSARY LINE
