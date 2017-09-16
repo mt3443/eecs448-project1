@@ -46,19 +46,15 @@ function drawDays(month_num, number_of_days, weekday) {
 			}
 
 			if (day.getDate() == i) { //setup for first day of the month (getting month lined up)
-				wrapper.innerHTML += '<div style="color:orange; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>';
-			} else if (day.getDate() == i) {
-				wrapper.innerHTML += '<div class="day" style="color:orange; margin-left:' + margin_left + 'px;">' + i + '</div>';
+				wrapper.innerHTML += '<div style="background-color:#02779E; color:lightyellow; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; // Selected cell/day # 1
 			} else {
-				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;" class="day">' + i + '</div>';
+				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; // Unselected cell/day # 1
 			}
 		} else {
-			if (day.getMonth() == currentMonth && day.getFullYear() == currentYear && today.getDate() == i) {
-				wrapper.innerHTML += '<div class="day" style="background-color:#02779E;color:lightyellow;">' + i + '</div>';
-			} else if (day.getDate() == i) {  // Hightlights today's text in calendar
-				wrapper.innerHTML += '<div class="day" style="color:orange;">' + i + '</div>';
+      if (day.getDate() == i) {  // Hightlights today's text in calendar
+				wrapper.innerHTML += '<div class="day" style="background-color:#02779E; color:lightyellow;">' + i + '</div>'; // Selected cell/day except cell # 1
 			} else {
-				wrapper.innerHTML += '<div class="day">' + i + '</div>';
+				wrapper.innerHTML += '<div class="day" >' + i + '</div>'; // Unselected cells/days except cell # 1
 			}
 		}
 	}
