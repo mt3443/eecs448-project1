@@ -83,7 +83,7 @@ function displayEvents() {
 
 					if(to24hour(document.getElementsByClassName("time")[k].innerHTML) == to24hour(eventsArray[i].times[j])) {
 						time = document.getElementsByClassName("time")[k].innerHTML;
-						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<input type="checkbox" class="attendButton">' + attendButtonText + '</input>' +
+						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<br><input type="checkbox" class="attendButton">' + attendButtonText + '</input>' +
 						'<button class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
 					}
 				}
@@ -99,7 +99,7 @@ function showEventDetails(input) { //input is time slot that we want the details
 	var selectedEvent;
 
 	for(var i = 0; i < selectedTime.childNodes.length; i++) {
-		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " " + attendButtonText + "Details") { //MUST CHANGE THIS LINE TO MATCH NAME OF CHECKBOX
+		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " " + attendButtonText + "Details") {
 			selectedEvent = selectedTime.childNodes[i];
 			break;
 		}
