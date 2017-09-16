@@ -15,13 +15,13 @@ var button_array = []; // This is where our switches are stored
 // In HTML Within The 'btn_wrapper' Div
 
 /**
- * High level function that controls 12 hour to 24 hour button
+ * High level function that controls the 12 hour to 24 hour button
  * @pre Button element must have unique index
- * @param {number} number number of individual toggles
+ * @param {number} number integer that represents the button
  * @param {string} name element id of the div that contains the button in index.html
  * @param {string} inner_name element id of actual button in index.html
- * @returns Nothing
- * @post Button is in toggled state
+ * @return Nothing {post} Button is in toggled state
+ * {post} Button is in toggled state
  */
 function btn_toggle(number, name, inner_name, /*behavior*/) {
   if(!inButtonArray(number)) {
