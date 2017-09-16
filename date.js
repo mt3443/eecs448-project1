@@ -6,58 +6,151 @@ function removeExistingEvents() {
 	}
 }
 
+function lastDayOfMonth() {
+	if(day.getMonth() == 0 || day.getMonth == 2 || day.getMonth() == 4 || day.getMonth() == 6 || day.getMonth() == 7 || day.getMonth() == 9 || day.getMonth() == 11) {
+		if(day.getDate() == 31) {
+			return true;
+		} else {
+			return false;
+		}
+	} else if(day.getMonth() == 1) {
+		if(day.getDate() == checkLeapYear()) {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		if(day.getDate() == 30) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+function fixCalendar() {
+	dayForward();
+	dayBackward();
+}
+
+function fixCalendarLeft() {
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() - 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+	
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() + 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+}
+
+function fixCalendarRight() {
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() + 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+	
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() - 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+}
+
 function monthForward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
-	//var month_next = monthToString(today.getMonth() + 1);
-	//cal[month_next].draw();
 	day.setMonth(day.getMonth() + 1);
 	updateTime();
 	removeExistingEvents();
 	displayEvents();
 	cal.draw();
-	
-	dayForward();
-	dayBackward();
+	fixCalendar();
 }
 
 function monthBackward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
-	//var month_prev = monthToString(today.getMonth() - 1);
-	//cal[month_prev].draw();
 	day.setMonth(day.getMonth() - 1);
 	updateTime();
 	removeExistingEvents();
 	displayEvents();
 	cal.draw();
-	
-	dayForward();
-	dayBackward();
+	fixCalendar();
 }
 
 function dayForward() {
-	cal = new Calendar();
-	document.getElementById('Calendar').innerHTML = '';
-	day.setDate(day.getDate() + 1);
-	updateTime();
-	//var month = monthToString(today.getMonth());
-	//cal[month].draw();
-	removeExistingEvents();
-	displayEvents();
-	cal.draw();
+	
+	if(day.getMonth() == 2 && day.getDate() == 31) {
+		cal = new Calendar();
+		document.getElementById('Calendar').innerHTML = '';
+		day.setDate(day.getDate() + 1);
+		updateTime();
+		removeExistingEvents();
+		displayEvents();
+		cal.draw();
+		fixCalendarRight();
+		
+	} else if(day.getMonth() == 2 && day.getDate() == 30) {
+		cal = new Calendar();
+		document.getElementById('Calendar').innerHTML = '';
+		day.setDate(day.getDate() + 1);
+		updateTime();
+		removeExistingEvents();
+		displayEvents();
+		cal.draw();
+	} else {
+	if(lastDayOfMonth()) {
+		cal = new Calendar();
+		document.getElementById('Calendar').innerHTML = '';
+		day.setDate(day.getDate() + 1);
+		updateTime();
+		removeExistingEvents();
+		displayEvents();
+		cal.draw();
+		fixCalendarRight();
+	} else {
+		cal = new Calendar();
+		document.getElementById('Calendar').innerHTML = '';
+		day.setDate(day.getDate() + 1);
+		updateTime();
+		removeExistingEvents();
+		displayEvents();
+		cal.draw();
+	}}
 }
 
 function dayBackward() {
-	cal = new Calendar();
-	document.getElementById('Calendar').innerHTML = '';
-	day.setDate(day.getDate() - 1);
-	updateTime();
-	//var month = monthToString(today.getMonth());
-	//cal[month].draw();
-	removeExistingEvents();
-	displayEvents();
-	cal.draw();
+	if(day.getDate() == 1) {
+		cal = new Calendar();
+		document.getElementById('Calendar').innerHTML = '';
+		day.setDate(day.getDate() - 1);
+		updateTime();
+		removeExistingEvents();
+		displayEvents();
+		cal.draw();
+		fixCalendarLeft();
+	} else {
+		cal = new Calendar();
+		document.getElementById('Calendar').innerHTML = '';
+		day.setDate(day.getDate() - 1);
+		updateTime();
+		removeExistingEvents();
+		displayEvents();
+		cal.draw();
+	}
 }
 
 function updateTime()
