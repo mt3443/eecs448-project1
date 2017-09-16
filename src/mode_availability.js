@@ -34,7 +34,7 @@ function fillEventDetails(index, time) {
 		divs += '<div class="attendeeName">' + eventsArray[index].canAttend[time][i] + '</div>';
 	}
 
-	divs += '<br><button onclick="javascript:window.location.reload()">Close All</button>';
+	divs += '<br><button style="background-color:#f4f4f4;border:none;border-radius:3px;color:#333;" onclick="javascript:window.location.reload()">Close All</button>';
 
 	return divs += '<br>';
 }
