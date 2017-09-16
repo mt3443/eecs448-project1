@@ -70,3 +70,44 @@ function checkLeapYear() {
 	}
 	return 28;
 }
+
+function fixCalendar() {
+	dayForward();
+	dayBackward();
+}
+
+function fixCalendarLeft() {
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() - 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+	
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() + 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+}
+
+function fixCalendarRight() {
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() + 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+	
+	cal = new Calendar();
+	document.getElementById('Calendar').innerHTML = '';
+	day.setDate(day.getDate() - 1);
+	updateTime();
+	removeExistingEvents();
+	displayEvents();
+	cal.draw();
+}

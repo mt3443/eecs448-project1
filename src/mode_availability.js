@@ -21,22 +21,6 @@ function hideAvailabilityCreation() {
 
 }
 
-function showEventDetails(input) { //input is time slot that we want the details to show up in, the time slot where the button was pressed
-
-	var selectedTime = document.getElementsByClassName("t_block")[input[2]];
-
-	var selectedEvent;
-
-	for(var i = 0; i < selectedTime.childNodes.length; i++) {
-		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " " + attendButtonText + "Details") { //MUST CHANGE THIS LINE TO MATCH NAME OF CHECKBOX
-			selectedEvent = selectedTime.childNodes[i];
-			break;
-		}
-	}
-	selectedEvent.lastElementChild.style.display = "block";
-
-}
-
 function fillEventDetails(index, time) {
 	var divs = '<br><div class="attending">' + Object.keys(eventsArray[index].canAttend[time]).length;
 
@@ -83,27 +67,4 @@ function constructAvailability() {
 	
 	saveEventsArray();
 	window.location.reload();
-}
-
-function displayEvents() {
-
-	var selectedDate = document.getElementById("date").innerHTML;
-	var time;
-	for(var i = 0; i < eventsArray.length; i++) { //run through the entire eventsArray
-		
-		if(eventsArray[i].date == selectedDate) {   //if an event happens today
-			
-			for(var j = 0; j < eventsArray[i].times.length; j++) { //run through the times that event is occuring
-				
-				for(var k = 0; k < document.getElementsByClassName("time").length; k++) {
-					
-					if(to24hour(document.getElementsByClassName("time")[k].innerHTML) == to24hour(eventsArray[i].times[j])) {
-						time = document.getElementsByClassName("time")[k].innerHTML;
-						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<input type="checkbox" class="attendButton">' + attendButtonText + '</input>' + 
-						'<button class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
-					}
-				}
-			}
-		}
-	}
 }

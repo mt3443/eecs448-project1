@@ -28,47 +28,6 @@ function lastDayOfMonth() {
 	}
 }
 
-function fixCalendar() {
-	dayForward();
-	dayBackward();
-}
-
-function fixCalendarLeft() {
-	cal = new Calendar();
-	document.getElementById('Calendar').innerHTML = '';
-	day.setDate(day.getDate() - 1);
-	updateTime();
-	removeExistingEvents();
-	displayEvents();
-	cal.draw();
-	
-	cal = new Calendar();
-	document.getElementById('Calendar').innerHTML = '';
-	day.setDate(day.getDate() + 1);
-	updateTime();
-	removeExistingEvents();
-	displayEvents();
-	cal.draw();
-}
-
-function fixCalendarRight() {
-	cal = new Calendar();
-	document.getElementById('Calendar').innerHTML = '';
-	day.setDate(day.getDate() + 1);
-	updateTime();
-	removeExistingEvents();
-	displayEvents();
-	cal.draw();
-	
-	cal = new Calendar();
-	document.getElementById('Calendar').innerHTML = '';
-	day.setDate(day.getDate() - 1);
-	updateTime();
-	removeExistingEvents();
-	displayEvents();
-	cal.draw();
-}
-
 function monthForward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
@@ -94,6 +53,7 @@ function monthBackward() {
 function dayForward() {
 	
 	if(day.getMonth() == 2 && day.getDate() == 31) {
+		
 		cal = new Calendar();
 		document.getElementById('Calendar').innerHTML = '';
 		day.setDate(day.getDate() + 1);
@@ -104,6 +64,7 @@ function dayForward() {
 		fixCalendarRight();
 		
 	} else if(day.getMonth() == 2 && day.getDate() == 30) {
+		
 		cal = new Calendar();
 		document.getElementById('Calendar').innerHTML = '';
 		day.setDate(day.getDate() + 1);
@@ -111,25 +72,30 @@ function dayForward() {
 		removeExistingEvents();
 		displayEvents();
 		cal.draw();
+		
 	} else {
-	if(lastDayOfMonth()) {
-		cal = new Calendar();
-		document.getElementById('Calendar').innerHTML = '';
-		day.setDate(day.getDate() + 1);
-		updateTime();
-		removeExistingEvents();
-		displayEvents();
-		cal.draw();
-		fixCalendarRight();
-	} else {
-		cal = new Calendar();
-		document.getElementById('Calendar').innerHTML = '';
-		day.setDate(day.getDate() + 1);
-		updateTime();
-		removeExistingEvents();
-		displayEvents();
-		cal.draw();
-	}}
+		
+		if(lastDayOfMonth()) {
+			cal = new Calendar();
+			document.getElementById('Calendar').innerHTML = '';
+			day.setDate(day.getDate() + 1);
+			updateTime();
+			removeExistingEvents();
+			displayEvents();
+			cal.draw();
+			fixCalendarRight();
+			
+		} else {
+			
+			cal = new Calendar();
+			document.getElementById('Calendar').innerHTML = '';
+			day.setDate(day.getDate() + 1);
+			updateTime();
+			removeExistingEvents();
+			displayEvents();
+			cal.draw();
+		}
+	}
 }
 
 function dayBackward() {
