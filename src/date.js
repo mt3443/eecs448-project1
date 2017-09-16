@@ -1,3 +1,10 @@
+/*
+==============================
+Filename     : date.js
+Authored by  : team "Team"
+Last Updated : 09 16 17
+==============================
+*/
 function removeExistingEvents() {
 	var elementsToRemove = document.getElementsByClassName("eventDisplay");
 
@@ -51,9 +58,9 @@ function monthBackward() {
 }
 
 function dayForward() {
-	
+
 	if(day.getMonth() == 2 && day.getDate() == 31) {
-		
+
 		cal = new Calendar();
 		document.getElementById('Calendar').innerHTML = '';
 		day.setDate(day.getDate() + 1);
@@ -62,9 +69,9 @@ function dayForward() {
 		displayEvents();
 		cal.draw();
 		fixCalendarRight();
-		
+
 	} else if(day.getMonth() == 2 && day.getDate() == 30) {
-		
+
 		cal = new Calendar();
 		document.getElementById('Calendar').innerHTML = '';
 		day.setDate(day.getDate() + 1);
@@ -72,9 +79,9 @@ function dayForward() {
 		removeExistingEvents();
 		displayEvents();
 		cal.draw();
-		
+
 	} else {
-		
+
 		if(lastDayOfMonth()) {
 			cal = new Calendar();
 			document.getElementById('Calendar').innerHTML = '';
@@ -84,9 +91,9 @@ function dayForward() {
 			displayEvents();
 			cal.draw();
 			fixCalendarRight();
-			
+
 		} else {
-			
+
 			cal = new Calendar();
 			document.getElementById('Calendar').innerHTML = '';
 			day.setDate(day.getDate() + 1);

@@ -65,6 +65,10 @@ body {
 
 .t_block:first-of-type {
   border-top:1px solid #02779E;
+  border-bottom:1px dotted #02779E;
+}
+
+.t_block:last-of-type {
   border-bottom:1px solid #02779E;
 }
 
@@ -75,7 +79,7 @@ body {
   min-width:300px;
   margin:0;
   padding:0;
-  border-bottom:1px solid #333;
+  border-bottom:1px dotted #02779E;
   border-left:1px solid #02779E;
   border-right:1px solid #02779E;
   background-color:#f4f4f4;
