@@ -70,8 +70,10 @@ function constructAvailability() {
 			for(var j = 0; j < eventsArray.length; j++) { //find the event in eventsArray
 				if(eventsArray[j].title == eventTitle.substr(0, eventsArray[j].title.length)) { //match title
 					for(var k = 0; k < eventsArray[j].times.length; k++) { 
-						if(to24hour(eventsArray[j].times[k]) == to24hour(eventTime)) { //match time
+						if(eventsArray[j].times[k] == eventTime) { //match time
 							eventsArray[j].canAttend[eventTime].push(document.getElementById("attendee").value);
+						} else if(eventsArray[j].times[k] == to12hour(eventTime)) {
+							eventsArray[j].canAttend[to12hour(eventTime)].push(document.getElementById("attendee").value);
 						}
 					}
 				}

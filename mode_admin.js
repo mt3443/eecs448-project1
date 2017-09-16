@@ -5,8 +5,8 @@ Authored by  : team "Team"
 Last Updated : 09 12 17
 ==============================
 */
-//var eventsArray = new JSONArray();
-//var today = new Date();
+
+var today = new Date();
 var day = new Date();
 var cal = new Calendar();
 // Event Object
@@ -58,8 +58,8 @@ function constructEvent() {
 	if(getSelectedTimes().length == 0) {
 		alert("Please select at least 1 time block for your event");
 	} else {
-			if(today < day) {
-						alert("You are creating an event in a past");
+			if(today > day) {
+						alert("You cannot create an event in the past");
 						resetSelectedTimes();
 			} else {
 				var tempDate = document.getElementById("date").innerHTML;

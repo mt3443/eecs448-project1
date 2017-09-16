@@ -38,6 +38,30 @@ function to24hour(input) {
 	}
 }
 
+function to12hour(input) {
+	if(input.substr(input.length - 1, 1) == "m") {
+		return input;
+	}
+	
+	if(input.substr(0,2) < 12) {
+		if(input.substr(0,2) == "00") {
+			return "12" + input.substr(2,3) + " am";
+		} else {
+			if(input.substr(0,2) < 10) {
+				return input.substr(1,4) + " am";
+			} else {
+				return input + " am";
+			}
+		}
+	} else {
+		if(input.substr(0,2) == "12") {
+			return input + " pm";
+		} else {
+			return parseInt(input.substr(0,2)) - 12 + input.substr(2,3) + " pm";
+		}
+	}
+}
+
 function changeTimeStyle(time) {
 	
 	var hour;
