@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 ==============================
 Filename     : date.js
@@ -5,6 +6,16 @@ Authored by  : team "Team"
 Last Updated : 09 12 17
 ==============================
 */
+||||||| merged common ancestors
+=======
+/*
+==============================
+Filename     : date.js
+Authored by  : team "Team"
+Last Updated : 09 16 17
+==============================
+*/
+>>>>>>> e4427785564fcf7e19003c23b067e49ca34fe1c8
 function removeExistingEvents() {
 	var elementsToRemove = document.getElementsByClassName("eventDisplay");
 

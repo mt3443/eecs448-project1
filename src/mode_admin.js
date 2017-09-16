@@ -74,16 +74,16 @@ function displayEvents() {
 	var selectedDate = document.getElementById("date").innerHTML;
 	var time;
 	for(var i = 0; i < eventsArray.length; i++) { //run through the entire eventsArray
-		
+
 		if(eventsArray[i].date == selectedDate) {   //if an event happens today
-			
+
 			for(var j = 0; j < eventsArray[i].times.length; j++) { //run through the times that event is occuring
-				
+
 				for(var k = 0; k < document.getElementsByClassName("time").length; k++) {
-					
+
 					if(to24hour(document.getElementsByClassName("time")[k].innerHTML) == to24hour(eventsArray[i].times[j])) {
 						time = document.getElementsByClassName("time")[k].innerHTML;
-						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<input type="checkbox" class="attendButton">' + attendButtonText + '</input>' + 
+						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<input type="checkbox" class="attendButton">' + attendButtonText + '</input>' +
 						'<button class="btn_details" style="float:right;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + '])">Details</button><div class="eventDetails" style="display:none;">' + fillEventDetails(i, time) + '</div></div>';
 					}
 				}
