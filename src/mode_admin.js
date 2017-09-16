@@ -99,7 +99,7 @@ function showEventDetails(input) { //input is time slot that we want the details
 	var selectedEvent;
 
 	for(var i = 0; i < selectedTime.childNodes.length; i++) {
-		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " " + attendButtonText + "Details") {
+		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " \n" + attendButtonText + "Details") {
 			selectedEvent = selectedTime.childNodes[i];
 			break;
 		}
