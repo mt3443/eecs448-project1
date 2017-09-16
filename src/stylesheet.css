@@ -159,7 +159,6 @@ button:hover {
 .fa:hover {
   cursor:pointer;
   color:#02779E;
-  opacity:1;
   transition:0.3s;
 }
 
