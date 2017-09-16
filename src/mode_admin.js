@@ -52,11 +52,14 @@ function hideEventCreation() {
 
 function constructEvent() {
 	if(getSelectedTimes().length == 0) {
-		alert("Please select at least 1 time block for your event");
+		alert("Please select at least one time block for your event");
 	} else {
 			if(today > day) {
-						alert("You cannot create an event in the past");
-						resetSelectedTimes();
+				alert("You cannot create an event in the past");
+				resetSelectedTimes();
+			} else if(eventAlreadyExisits()) {
+				alert("This event already exists at one of the selected times");
+				resetSelectedTimes();
 			} else {
 				var tempDate = document.getElementById("date").innerHTML;
 
@@ -67,6 +70,26 @@ function constructEvent() {
 				resetSelectedTimes();
 			}
 	}
+}
+
+function eventAlreadyExisits() {
+	var tempDate = document.getElementById("date").innerHTML;
+
+	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
+	
+	for(var i = 0; i < eventsArray.length; i++) {
+		if(eventsArray[i].title == tempEvent.title) { //if two events have the same title
+			for(var j = 0; j < eventsArray[i].times.length; j++) {
+				for(var k = 0; k < tempEvent.times.length; k++) {
+					if(eventsArray[i].times[j] == tempEvent.times[k]) {
+						return true;
+					}
+				}
+			}
+		}
+	}
+	
+	return false;
 }
 
 function displayEvents() {
@@ -122,10 +145,6 @@ function isEventsArrayEmpty() {
     eventsArrayIsEmpty = false;
   }
   return eventsArrayIsEmpty;
-}
-
-function hideSelf(index) {
-	document.getElementById('details' + index).style.display = "none";
 }
 
 function clearEventsArray() {
