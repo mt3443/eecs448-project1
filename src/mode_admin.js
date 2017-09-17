@@ -9,7 +9,7 @@ Last Updated : 09 12 17
 var today = new Date();
 var day = new Date();
 var cal = new Calendar();
-var unique = 9999;
+var unique = 0;
 // Event Object
 
 /**
@@ -189,7 +189,7 @@ function displayEvents() {
 						time = document.getElementsByClassName("time")[k].innerHTML;
 						document.getElementsByClassName("t_block")[k].innerHTML += '<div style="font-weight:800;background-color:' + eventsArray[i].color + ';" class="eventDisplay">' + eventsArray[i].title + ' ' + '<br><input type="checkbox" style="margin:25px;line-height:60px;width:auto;" class="attendButton"></input>' + '<div style="display:inline-block;font-weight:300;margin-left:-10px;">' + attendButtonText  +
 						'</div><button id="details'+ (unique) + '" class="btn_details" style="float:right;background-color:#f4f4f4;border:none;border-radius:3px;color:#333;" onclick="showEventDetails([' + i.toString() + ',' + j.toString() + ',' + k.toString() + ']);hideSelf(' + (unique) + ');">Details</button><div class="eventDetails" style="font-weight:300;display:none;">' + fillEventDetails(i, time) + '</div></div>';
-						unique = unique - 1;
+						unique = unique + 1;
 					}
 				}
 			}
