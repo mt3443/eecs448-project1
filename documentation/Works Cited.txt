@@ -1,0 +1,10 @@
+font-awesome-4.7.0
+Created by Dave Gandy
+website: http://fontawesome.io/
+date accessed: September 7, 2017
+
+
+randomColor
+Created by David Merfield
+website: https://github.com/davidmerfield/randomColor
+date accessed: September 14, 2017
