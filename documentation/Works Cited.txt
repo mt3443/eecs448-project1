@@ -8,3 +8,8 @@ randomColor
 Created by David Merfield
 website: https://github.com/davidmerfield/randomColor
 date accessed: September 14, 2017
+
+documentation.js
+Created by many
+website: http://documentation.js.org/
+date accessed: September 15, 2017
