@@ -51,38 +51,38 @@ function Calendar() {
  */
 
 function drawDays(month_num, number_of_days, weekday) {
-	var wrapper = document.getElementById('Calendar'); 																					//EVERY LINE OF CODE IN THIS FUNCTION IS NECESSARY
+	var wrapper = document.getElementById('Calendar');
 
-	var today = new Date(); 																															//NECESSARY LINE
-	var currentMonth = today.getMonth();																												//NECESSARY LINE
-	var currentYear = today.getFullYear(); 																												//NECESSARY LINE
+	var today = new Date();
+	var currentMonth = today.getMonth();
+	var currentYear = today.getFullYear();
 
-	for(var i = 1; i <= number_of_days; i++) {  																										//NECESSARY LINE
+	for(var i = 1; i <= number_of_days; i++) {
 
-		if(i == 1) { 																																	//NECESSARY LINE
-			if(weekday == 0) { //wrap around when day is sunday (create a new row for the next week) 													//NECESSARY LINE
-				var margin_left = 0; 																													//NECESSARY LINE
-			} else { 																																	//NECESSARY LINE
-				var margin_left = weekday * 26; 																										//NECESSARY LINE
-			} 																																			//NECESSARY LINE
+		if(i == 1) {
+			if(weekday == 0) { //wrap around when day is sunday (create a new row for the next week)
+				var margin_left = 0;
+			} else {
+				var margin_left = weekday * 26;
+			}
 
-			if (day.getDate() == i) { //setup for first day of the month (getting month lined up) 														//NECESSARY LINE
-				wrapper.innerHTML += '<div style="color:lightcoral; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; 						//NECESSARY LINE
-			} else if(day.getDate() == i) { 																											//NECESSARY LINE
-				wrapper.innerHTML += '<div class="day" style="color:lightcoral; margin-left:' + margin_left + 'px;">' + i + '</div>'; 						//NECESSARY LINE
-			} else { 																																	//NECESSARY LINE
-				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; // Unselected cell/day # 1 			//NECESSARY LINE
-			} 																																			//NECESSARY LINE
-		} else { 																																		//NECESSARY LINE
-			if(day.getMonth() == currentMonth && day.getFullYear() == currentYear && today.getDate() == i) { 											//NECESSARY LINE
-				wrapper.innerHTML += '<div class="day" style="background-color:#02779E;color:lightyellow;">' + i + '</div>';  							//NECESSARY LINE
-			} else if(day.getDate() == i) { 																											//NECESSARY LINE
-				wrapper.innerHTML += '<div class="day" style="color:lightcoral;">' + i + '</div>'; 															//NECESSARY LINE
-			} else { 																																	//NECESSARY LINE
-				wrapper.innerHTML += '<div class="day" >' + i + '</div>'; // Unselected cells/days except cell # 1  									//NECESSARY LINE
-			} 																																			//NECESSARY LINE
-		} 																																				//NECESSARY LINE
-	} 																																					//NECESSARY LINE
+			if (day.getDate() == i) { //setup for first day of the month (getting month lined up)
+				wrapper.innerHTML += '<div style="color:lightcoral; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>';
+			} else if(day.getDate() == i) {
+				wrapper.innerHTML += '<div class="day" style="color:lightcoral; margin-left:' + margin_left + 'px;">' + i + '</div>';
+			} else {
+				wrapper.innerHTML += '<div style="margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; // Unselected cell/day # 1
+			}
+		} else {
+			if(day.getMonth() == currentMonth && day.getFullYear() == currentYear && today.getDate() == i) {
+				wrapper.innerHTML += '<div class="day" style="background-color:#02779E;color:lightyellow;">' + i + '</div>';
+			} else if(day.getDate() == i) {
+				wrapper.innerHTML += '<div class="day" style="color:lightcoral;">' + i + '</div>';
+			} else {
+				wrapper.innerHTML += '<div class="day" >' + i + '</div>'; // Unselected cells/days except cell # 1
+			}
+		}
+	}
 }
 
 /**
