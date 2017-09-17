@@ -18,7 +18,7 @@ function Calendar() {
 
   var month = monthToString(day.getMonth());
   var tempDate = new Date(day.getFullYear(), day.getMonth(), 1);
-  
+
   if(month == "February") {
 	this.number_of_days = checkLeapYear();
   } else if (month == "January" || month == "March" || month == "May" || month == "July" || month == "August" || month == "October" || month == "December") {
@@ -26,7 +26,7 @@ function Calendar() {
   } else {
 	this.number_of_days = 30;
   }
-  
+
   /**
    * High level method that controls rendering of calendar graphic for the UI<br><br>Pre conditions: Calendar object has been instantiated<br><br>Post conditions: Calendar graphic is present in UI
    * @param {none}
@@ -35,7 +35,7 @@ function Calendar() {
 
   this.draw = function() {
 	  var wrapper = document.getElementById('Calendar');
-	  wrapper.style.width = '182px';
+	  wrapper.style.width = '185px';
 	  wrapper.innerHTML += '<div class="monthname">' + monthToString(day.getMonth()) + ' ' + day.getFullYear() + '</div>'
 	  wrapper.innerHTML += days_of_the_week;
 	  drawDays(day.getMonth(), this.number_of_days, tempDate.getDay());
@@ -67,7 +67,7 @@ function drawDays(month_num, number_of_days, weekday) {
 			} 																																			//NECESSARY LINE
 
 			if (day.getDate() == i) { //setup for first day of the month (getting month lined up) 														//NECESSARY LINE
-				wrapper.innerHTML += '<div style="color:orange; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; 						//NECESSARY LINE
+				wrapper.innerHTML += '<div style="color:lightcoral; margin-left:' + margin_left + 'px;" class="day">' + i + '</div>'; 						//NECESSARY LINE
 			} else if(day.getDate() == i) { 																											//NECESSARY LINE
 				wrapper.innerHTML += '<div class="day" style="color:lightcoral; margin-left:' + margin_left + 'px;">' + i + '</div>'; 						//NECESSARY LINE
 			} else { 																																	//NECESSARY LINE
