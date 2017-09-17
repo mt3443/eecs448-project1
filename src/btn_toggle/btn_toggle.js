@@ -15,13 +15,11 @@ var button_array = []; // This is where our switches are stored
 // In HTML Within The 'btn_wrapper' Div
 
 /**
- * High level function that controls the 12 hour to 24 hour button
- * @pre Button element must have unique index
- * @param {number} number integer that represents the button
+ * High level function that controls the 12 hour to 24 hour button. <br><br>Pre conditions: Each button element must have a unique integer identifier. <br><br>Post conditions: Button that was clicked is now in toggled state
+ * @param {number} number integer identifier for the button that was clicked
  * @param {string} name element id of the div that contains the button in index.html
  * @param {string} inner_name element id of actual button in index.html
- * @return Nothing {post} Button is in toggled state
- * {post} Button is in toggled state
+ * @return {void}
  */
 function btn_toggle(number, name, inner_name, /*behavior*/) {
   if(!inButtonArray(number)) {
@@ -48,11 +46,9 @@ function btn_toggle(number, name, inner_name, /*behavior*/) {
 // @PRE Follows btn_toggle()
 
 /**
- * Checks if given number, which represents a button, is in the button array
- * @pre Button element must have unique ID
- * @param {number} number representing a button
- * @returns true if number is in the button array, false if number is not in the button array
- * @post None
+ * Checks if given number, which represents a button, is in the button array. <br><br>Pre conditions: Each button element must have a unique integer identifier.<br><br>Post conditions: none
+ * @param {number} number integer identifier for the button that was clicked
+ * @returns {bool} true if number is in the button array, false if number is not in the button array
  */
 function inButtonArray(number) {
   if(button_array.length === 0) {
@@ -69,11 +65,9 @@ function inButtonArray(number) {
 // @POST Returns Bool Indicating If Button Already Exists In button_array
 
 /**
- * Function that manipulates css to achieve button toggling animation
- * @pre None
- * @param {number} number representing the button that we wish to toggle
- * @returns Nothing
- * @post Button animation is played, button is then in the toggled state
+ * Function that manipulates css to achieve button toggling animation.<br><br>Pre conditions: Each button element must have a unique integer identifier.<br><br>Post conditions: Button animation is played, button is then in toggled state.
+ * @param {number} number integer identifier for the button that was clicked
+ * @returns {void}
  */
 
 function animateSwitch(number) {

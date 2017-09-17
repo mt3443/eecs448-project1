@@ -8,11 +8,23 @@ Last Updated : 09 12 17
 
 var attendButtonText = 'I can attend at this time';
 
+/**
+ * Edits HTML to show availability creation prompt<br><br>Pre conditions: availability creation prompt must not already be shown<br><br>Post conditions: prompt for creating availability is shown
+ * @param {none}
+ * @return {void}
+ */
+
 function showAvailabilityCreation() {
 	document.getElementById("availabilityCreation").style.display = "block";
 	document.getElementById("availabilityCreationButton").style.display = "none";
 	document.getElementById("eventCreationButton").style.display = "none";
 }
+
+/**
+ * Edits HTML to hide availability creation prompt<br><br>Pre conditions: availability creation prompt must already be shown<br><br>Post conditions: prompt for creating availability is hidden
+ * @param {none}
+ * @return {void}
+ */
 
 function hideAvailabilityCreation() {
 	document.getElementById("availabilityCreation").style.display = "none";
@@ -20,6 +32,13 @@ function hideAvailabilityCreation() {
 	document.getElementById("eventCreationButton").style.display = "block";
 
 }
+
+/**
+ * Edits HTML to show who is attending an event at a given time<br><br>Pre conditions: event must be instantiated<br><br>Post conditions: information about people attending the event is shown
+ * @param {number} index integer representing the specified event
+ * @param {string} time string representing the time at which the event takes place
+ * @return {string} HTML used to display information about who is attending specified event
+ */
 
 function fillEventDetails(index, time) {
 	
@@ -40,32 +59,41 @@ function fillEventDetails(index, time) {
 	return divs += '<br>';
 }
 
+/**
+ * Collects information from availability creation prompt and stores it in the specified event objects at the specified times<br><br>Pre conditions: boxes must be checked for events user wants to attend, user must have entered a name into availability creation prompt<br><br>Post conditions: attendee information is stored in event object
+ * @param {none}
+ * @return {void}
+ */
+
 function constructAvailability() {
-
-	var currentEvent;
-	var eventTime;
-	var eventTitle
-
-	for(var i = 0; i < document.getElementsByClassName("attendButton").length; i++) {
-		if(document.getElementsByClassName("attendButton")[i].checked) {
-			eventTime = document.getElementsByClassName("attendButton")[i].parentNode.parentNode.childNodes[0].innerHTML;
-			currentEvent = document.getElementsByClassName("attendButton")[i].parentNode; //add name to events canAttend list at that time
-			eventTitle = currentEvent.innerText;
-
-			for(var j = 0; j < eventsArray.length; j++) { //find the event in eventsArray
-				if(eventsArray[j].title == eventTitle.substr(0, eventsArray[j].title.length)) { //match title
-					for(var k = 0; k < eventsArray[j].times.length; k++) {
-						if(eventsArray[j].times[k] == eventTime) { //match time
-							eventsArray[j].canAttend[eventTime].push(document.getElementById("attendee").value);
-						} else if(eventsArray[j].times[k] == to12hour(eventTime)) {
-							eventsArray[j].canAttend[to12hour(eventTime)].push(document.getElementById("attendee").value);
+	if(document.getElementById("attendee").value.length == 0) {
+		alert("Please enter your name");
+	} else {
+		var currentEvent;
+		var eventTime;
+		var eventTitle
+	
+		for(var i = 0; i < document.getElementsByClassName("attendButton").length; i++) {
+			if(document.getElementsByClassName("attendButton")[i].checked) {
+				eventTime = document.getElementsByClassName("attendButton")[i].parentNode.parentNode.childNodes[0].innerHTML;
+				currentEvent = document.getElementsByClassName("attendButton")[i].parentNode; //add name to events canAttend list at that time
+				eventTitle = currentEvent.innerText;
+	
+				for(var j = 0; j < eventsArray.length; j++) { //find the event in eventsArray
+					if(eventsArray[j].title == eventTitle.substr(0, eventsArray[j].title.length)) { //match title
+						for(var k = 0; k < eventsArray[j].times.length; k++) {
+							if(eventsArray[j].times[k] == eventTime) { //match time
+								eventsArray[j].canAttend[eventTime].push(document.getElementById("attendee").value);
+							} else if(eventsArray[j].times[k] == to12hour(eventTime)) {
+								eventsArray[j].canAttend[to12hour(eventTime)].push(document.getElementById("attendee").value);
+							}
 						}
 					}
 				}
 			}
 		}
-	}
 
-	saveEventsArray();
-	window.location.reload();
+		saveEventsArray();
+		window.location.reload();
+	}
 }

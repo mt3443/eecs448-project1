@@ -7,6 +7,12 @@ Last Updated : 09 12 17
 */
 var timeStyle = 12;
 
+/**
+ * Converts given time to 24 hour mode<br><br>Pre conditions: input must be a string representing a time in either 12 or 24 hour mode<br><br>Post conditions: none
+ * @param {string} input string representing a time in either 12 or 24 hour mode
+ * @return {string} 24 hour equivalent of given time
+ */
+
 function to24hour(input) {
 	if(input.substr(input.length - 1, 1) != 'm') {
 		return input;
@@ -45,6 +51,12 @@ function to24hour(input) {
 	}
 }
 
+/**
+ * Converts given time to 12 hour mode<br><br>Pre conditions: input must be a string representing a time in either 12 or 24 hour mode<br><br>Post conditions: none
+ * @param {string} input string representing a time in either 12 or 24 hour mode
+ * @return {string} 12 hour equivalent of given time
+ */
+
 function to12hour(input) {
 	if(input.substr(input.length - 1, 1) == "m") {
 		return input;
@@ -68,6 +80,12 @@ function to12hour(input) {
 		}
 	}
 }
+
+/**
+ * Converts any given time to the equivalent in the opposite time mode (converts 12 hour times to 24 hour, converts 24 hour times to 12 hour)<br><br>Pre conditions: input must be a string representing a time in either 12 or 24 hour mode<br><br>Post conditions: none
+ * @param {string} time string representing a time in either 12 or 24 hour mode
+ * @return {string} equivalent of given time in opposite time mode
+ */
 
 function changeTimeStyle(time) {
 
@@ -132,6 +150,11 @@ function changeTimeStyle(time) {
 	}
 }
 
+/**
+ * Edits HTML to change every time slot in the UI to the opposite time mode<br><br>Pre conditions: none<br><br>Post conditions: All times are represented in the opposite time mode
+ * @param {none}
+ * @return {void}
+ */
 
 function toggleTime() {
 

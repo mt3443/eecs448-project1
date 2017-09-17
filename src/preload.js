@@ -6,6 +6,13 @@ Last Updated : 09 12 17
 ==============================
 */
 // Initialize timeslots and display previously made event
+
+/**
+ * Constructs UI at the beginning of every session<br><br>Pre conditions: none<br><br>Post conditions: program is ready for user interaction
+ * @param {none}
+ * @return {void}
+ */
+
 window.onload = function() {
   var month_current = monthToString(day.getMonth());
   cal.draw();
@@ -68,6 +75,13 @@ Use : Any additional functions to include not covered by the modes
 var time_selections = [];
 // Navbar Functionality
 var toggle = true;
+
+/**
+ * Controls settings menu portion of the UI when gear button is clicked<br><br>Pre conditions: none<br><br>Post conditions: settings menu is now in toggled state
+ * @param {none}
+ * @return {void}
+ */
+
 function toggle_navbar() {
   if(toggle) {
     document.getElementById('navbar').style.display = "block";
@@ -83,6 +97,13 @@ function toggle_navbar() {
   return;
 }
 // Toggles the selected behavior of each timeslot
+
+/**
+ * Edits HTML to show which time slots are selected<br><br>Pre conditions: none<br><br>Post conditions: selected time slots are highlighted in yellow
+ * @param {number} index integer representing the time slot that was selected
+ * @return {void}
+ */
+
 function toggle_timeAdd(index) {
   if(!time_selections[index].selected) {
     document.getElementsByClassName('t_block')[index].style.backgroundColor = "lightyellow";
@@ -93,23 +114,4 @@ function toggle_timeAdd(index) {
     document.getElementsByClassName('time')[index].style.color = "#02779E";
     time_selections[index].selected = false;
   }
-}
-// Accessed in constructEvent.js
-function getSelectedTimes() {
-  var timeslots = [];
-  for(var i = 0; i < time_selections.length; i++) {
-    if(time_selections[i].selected) {
-      timeslots.push(time_selections[i].time);
-    }
-  }
-  return timeslots;
-}
-
-function resetSelectedTimes() {
-  for(var i = 0; i < time_selections.length; i++) {
-    if(time_selections[i].selected) {
-      toggle_timeAdd(i);
-    }
-  }
-  window.location.reload();
 }

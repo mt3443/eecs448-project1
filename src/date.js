@@ -5,6 +5,12 @@ Authored by  : team "Team"
 Last Updated : 09 16 17
 ==============================
 */
+
+/**
+ * Function that removes all event graphics from UI<br><br>Pre conditions: Events for current day have been rendered on UI<br><br>Post conditions: All event graphics for the current day have been removed
+ * @param {none}
+ * @return {void}
+ */
 function removeExistingEvents() {
 	var elementsToRemove = document.getElementsByClassName("eventDisplay");
 
@@ -12,6 +18,12 @@ function removeExistingEvents() {
 		elementsToRemove[0].remove();
 	}
 }
+
+/**
+ * Function that checks if the selected day is the last day of the month<br><br>Pre conditions: day has been instantiated<br><br>Post conditions: none
+ * @param {none}
+ * @return {bool} true if the selected day is the last day of the month, false if it is not
+ */
 
 function lastDayOfMonth() {
 	if(day.getMonth() == 0 || day.getMonth == 2 || day.getMonth() == 4 || day.getMonth() == 6 || day.getMonth() == 7 || day.getMonth() == 9 || day.getMonth() == 11) {
@@ -35,6 +47,12 @@ function lastDayOfMonth() {
 	}
 }
 
+/**
+ * Changes the selected day to one month in the future<br><br>Pre conditions: none<br><br>Post conditions: New selected date is one month after previous selected date
+ * @param {none}
+ * @return {void}
+ */
+
 function monthForward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
@@ -46,6 +64,12 @@ function monthForward() {
 	fixCalendar();
 }
 
+/**
+ * Changes the selected day to one month in the past<br><br>Pre conditions: none<br><br>Post conditions: New selected date is one month before previous selected date
+ * @param {none}
+ * @return {void}
+ */
+
 function monthBackward() {
 	cal = new Calendar();
 	document.getElementById('Calendar').innerHTML = '';
@@ -56,6 +80,12 @@ function monthBackward() {
 	cal.draw();
 	fixCalendar();
 }
+
+/**
+ * Changes the selected day to one day in the future<br><br>Pre conditions: none<br><br>Post conditions: New selected date is one day after previous selected date
+ * @param {none}
+ * @return {void}
+ */
 
 function dayForward() {
 
@@ -105,6 +135,12 @@ function dayForward() {
 	}
 }
 
+/**
+ * Changes the selected day to one day in the past<br><br>Pre conditions: none<br><br>Post conditions: New selected date is one day before previous selected date
+ * @param {none}
+ * @return {void}
+ */
+
 function dayBackward() {
 	if(day.getDate() == 1) {
 		cal = new Calendar();
@@ -125,6 +161,12 @@ function dayBackward() {
 		cal.draw();
 	}
 }
+
+/**
+ * Updates HTML on UI to display the current date<br><br>Pre conditions: none<br><br>Post conditions: UI displays the correct day
+ * @param {none}
+ * @return {void}
+ */
 
 function updateTime()
 {
@@ -151,6 +193,12 @@ function updateTime()
 	document.getElementById("date").innerHTML = monthToString(day.getMonth()) + " " + day.getDate() + ", " + day.getFullYear();
 
 }
+
+/**
+ * Converts integer representation of a month to the name of the month<br><br>Pre conditions: input is an integer from 0 to 11<br><br>Post conditions: none
+ * @param {number} month integer representation of a month (0 - 11)
+ * @return {string} name of month corresponding to input
+ */
 
 function monthToString(month) {
 	//month if's
