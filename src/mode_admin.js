@@ -134,7 +134,23 @@ function constructEvent() {
 		} else {
 			var tempDate = document.getElementById("date").innerHTML;
 
-			var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor({luminosity: 'light'}), tempDate, getSelectedTimes());
+			var tempHost = document.getElementById("host").value;
+			var tempName = document.getElementById("name").value;
+			
+			while(tempHost.charAt(tempHost.length - 1) == " ") {
+				tempHost = tempHost.substr(0, tempHost.length - 1);
+			}
+			
+			while(tempName.charAt(tempName.length - 1) == " ") {
+				tempName = tempName.substr(0, tempName.length - 1);
+			}
+			
+			tempHost = tempHost.replace(/</i, '');
+			tempHost = tempHost.replace(/>/i, '');
+			tempName = tempName.replace(/</i, '');
+			tempName = tempName.replace(/>/i, '');
+			
+			var tempEvent = new Event(tempHost, tempName, randomColor({luminosity: 'light'}), tempDate, getSelectedTimes());
 			eventsArray.push(tempEvent);
 			saveEventsArray();
 			hideEventCreation();
@@ -151,8 +167,24 @@ function constructEvent() {
 
 function eventAlreadyExisits() {
 	var tempDate = document.getElementById("date").innerHTML;
-
-	var tempEvent = new Event(document.getElementById("host").value, document.getElementById("name").value, randomColor(), tempDate, getSelectedTimes());
+	
+	var tempHost = document.getElementById("host").value;
+	var tempName = document.getElementById("name").value;
+	
+	while(tempHost.charAt(tempHost.length - 1) == " ") {
+		tempHost = tempHost.substr(0, tempHost.length - 1);
+	}
+	
+	while(tempName.charAt(tempName.length - 1) == " ") {
+		tempName = tempName.substr(0, tempName.length - 1);
+	}
+	
+	tempHost = tempHost.replace(/</i, '');
+	tempHost = tempHost.replace(/>/i, '');
+	tempName = tempName.replace(/</i, '');
+	tempName = tempName.replace(/>/i, '');
+	
+	var tempEvent = new Event(tempHost, tempName, randomColor(), tempDate, getSelectedTimes());
 
 	for(var i = 0; i < eventsArray.length; i++) {
 		if(eventsArray[i].title == tempEvent.title) { //if two events have the same title
@@ -208,9 +240,11 @@ function showEventDetails(input) { //input is time slot that we want the details
 	var selectedTime = document.getElementsByClassName("t_block")[input[2]];
 
 	var selectedEvent;
+	
+	
 
 	for(var i = 0; i < selectedTime.childNodes.length; i++) {
-		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " \n" + attendButtonText + "Details" || selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + "\n" + attendButtonText + "Details") {
+		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " \n" + attendButtonText + "Details") {
 			selectedEvent = selectedTime.childNodes[i];
 			break;
 		}
