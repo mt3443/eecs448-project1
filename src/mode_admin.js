@@ -202,7 +202,7 @@ function displayEvents() {
  * @param {array} input array containing information about the specified event in the specified time slot
  * @return {void}
  */
-
+ 
 function showEventDetails(input) { //input is time slot that we want the details to show up in, the time slot where the button was pressed
 
 	var selectedTime = document.getElementsByClassName("t_block")[input[2]];
@@ -210,7 +210,7 @@ function showEventDetails(input) { //input is time slot that we want the details
 	var selectedEvent;
 
 	for(var i = 0; i < selectedTime.childNodes.length; i++) {
-		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " \n" + attendButtonText + "Details") {
+		if(selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + " \n" + attendButtonText + "Details" || selectedTime.childNodes[i].innerText == eventsArray[input[0]].title + "\n" + attendButtonText + "Details") {
 			selectedEvent = selectedTime.childNodes[i];
 			break;
 		}
